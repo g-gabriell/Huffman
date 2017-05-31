@@ -40,7 +40,7 @@ caracterFreq_t** ContaFreq(const char* filename, int* num)
     while((aux = fgetc(file)) != EOF){
 
         for(i=0;i<*num;i++){
-            if(aux == tabela[i]->caracter){
+            if(aux == tabela[i]->character){
                 tabela[i]->freq++;
                 break;
             }
@@ -52,7 +52,7 @@ caracterFreq_t** ContaFreq(const char* filename, int* num)
                 perror("realloc_num:");
                 exit(EXIT_FAILURE);
             }
-            tabela[*num]->caracter = aux;
+            tabela[*num]->character = aux;
             tabela[*num]->freq = 1;
             (*num)++;
         }

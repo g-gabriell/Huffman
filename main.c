@@ -22,7 +22,7 @@ int main()
     heap = inicializa_heap(n, tabela);
 
 
-  //  min_heapify(heap, n/2);
+    heapSort(heap);
 
   printf("\n\n ");
 

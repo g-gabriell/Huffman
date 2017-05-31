@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1496257683 source:/home/gabriel/Documentos/Huffman/heap.c
+	<stdio.h>
+	<stdlib.h>
+	"heap.h"
+
+1496256199 /home/gabriel/Documentos/Huffman/heap.h
+	"tabela.h"
+
+1496256199 /home/gabriel/Documentos/Huffman/tabela.h
+
+1496256978 source:/home/gabriel/Documentos/Huffman/tabela.c
+	<stdio.h>
+	<stdlib.h>
+	"tabela.h"
+
+1496257613 source:/home/gabriel/Documentos/Huffman/main.c
+	<stdio.h>
+	<stdlib.h>
+	"tabela.h"
+	"heap.h"
+
