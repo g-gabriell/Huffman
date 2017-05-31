@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="arquivo.txt" />
+		<Unit filename="arvore.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arvore.h" />
 		<Unit filename="heap.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,6 +50,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
