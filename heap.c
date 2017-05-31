@@ -1,61 +1,73 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "heap.h"
 
+
 struct heap{
-    int* A;
+    caracterFreq_t** A;
     int tam_heap;
-    int tamanhomaximo;
 };
 
-void inicializa_heap(heap_t* heap, int tamanho_max){
-    heap->A = (int*) malloc(sizeof(int)*(tamanho_max+1));
-    heap->tam_heap = 0;
-    heap->tamanhomaximo = tamanho_max;
+
+heap_t* inicializa_heap(int tamanho_heap, caracterFreq_t** tabela){
+
+    heap_t* heap;
+    heap = malloc(sizeof(heap_t));
+
+    heap->A = tabela;
+    heap->tam_heap = tamanho_heap;
+
+    build_heap(heap);
+
+    return heap;
 }
 
 int pai(int i){
-    if(i == 1)
-        return NULL;
-    return i/2;
+    return (i-1)/2;
 }
 
 int esquerda(int i){
-    return 2*i;
+    return 2*i + 1;
 }
 
 int direita(int i){
-    return 2*i+1;
+    return 2*i + 2;
 }
 
-void max_heapify(heap_t* heap, int i){
+void min_heapify(heap_t* heap, int i){
     int e = esquerda(i);
     int d = direita(i);
-    int temp;
+    caracterFreq_t* temp;
 
-    int maior = i;
+    int menor = i;
 
-    if ((e <= heap->tam_heap) && (heap->A[e] > heap->A[i]))
-        maior = e;
+    if ((e < heap->tam_heap) && (get_freq(heap->A[e]) < get_freq(heap->A[i]))){
+//        printf("\n %d troca %d", (get_freq(heap->A[e]), get_freq(heap->A[i])));
+        menor = e;
+    }
 
-    if ((d <= heap->tam_heap) && (heap->A[d] > heap->A[maior]))
-        maior = d;
+    if ((d < heap->tam_heap) && (get_freq(heap->A[d]) < get_freq(heap->A[menor]))){
+//        printf("\n %d troca %d", (get_freq(heap->A[d]), get_freq(heap->A[menor])));
+        menor = d;
+    }
 
-    if (maior != i)
+    if (menor != i)
     {
+//printf("entrou %d  %d  %d\n",i, get_freq(heap->A[i]),get_freq(heap->A[menor]) );
         temp = heap->A[i];
-        heap->A[i] = heap->A[maior];
-        heap->A[maior] = temp;
-        max_heapify(heap,maior);
+        heap->A[i] = heap->A[menor];
+        heap->A[menor] = temp;
+        min_heapify(heap,menor);
     }
 }
 
 void build_heap(heap_t* heap){
     int i;
-    for (i = (heap->tam_heap)/2; i>0; i--)
-        max_heapify(heap,i);
+    for (i = ((heap->tam_heap/2) - 1); i>=0; i--)
+        min_heapify(heap,i);
 }
-
+/*
 void heapSort(heap_t * heap){
   int tamanho = heap->tam_heap;
   int i;
@@ -80,3 +92,7 @@ void set_tamanho_heap(heap_t* heap, int tamanho){
 int tamanho_heap(heap_t* heap){
     return heap->tam_heap;
 }
+
+
+*/
+
