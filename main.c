@@ -9,24 +9,24 @@
 int main()
 {
     caracter_t** tabela;
-    int n;  // tamanho tabela
+    int tam_tabela;  // tamanho tabela
     int i;
 
-    heap_t* heap;
+//    heap_t* heap;
 
-    tabela = ContaFreq("arquivo.txt", &n);
+    tabela = ContaFreq("arquivo.txt", &tam_tabela);
 
-    printf("  %d caracteres \n", n);
+    printf("  %d caracteres \n", tam_tabela);
 
-    for(i=0;i<n;i++)
+    for(i=0;i<tam_tabela;i++)
         printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
-    heap = inicializa_heap(n, tabela);
+//    heap = inicializa_heap(n, tabela);
 
-    heapSort(heap);
+//    heapSort(heap);
 
     printf("\n\n ");
-    for(i=0;i<n;i++)
+    for(i=0;i<tam_tabela;i++)
         printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
 

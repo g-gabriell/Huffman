@@ -2,10 +2,11 @@
 #define HEAP_H_INCLUDED
 
 #include "tabela.h"
+#include "arvore.h"
 
 typedef struct heap heap_t;
 
-heap_t* inicializa_heap(int tamanho_heap, caracter_t** tabela);
+heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t* folhas);
 
 void build_heap(heap_t* heap);
 
