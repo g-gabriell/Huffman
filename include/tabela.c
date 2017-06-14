@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 #include "tabela.h"
-
+#include "arvore.h"
 
 struct caracter{
     char simbolo;
     int freq;
-//    sub_arvore_t* folha;
-//    char* codigo;
+    sub_arvore_t* folha;
+    char* codigo;
 };
 
 

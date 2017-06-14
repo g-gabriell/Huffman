@@ -7,6 +7,8 @@
 typedef struct arvore arvore_t;
 typedef struct sub_arvore sub_arvore_t;
 
+sub_arvore_t* cria_folhas(caracter_t** lista, int tam);
+
 //sub_arvore_t* cria_sub_arvore
 
 #endif // ARVORE_H_INCLUDED
