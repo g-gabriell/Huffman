@@ -26,8 +26,9 @@ sub_arvore_t* cria_folhas(caracter_t** lista, int tam){
     folhas = malloc(sizeof(sub_arvore_t)*tam);
 
     for(i=0;i<tam;i++){
-        folhas[i].id = malloc(sizeof(char));
+        folhas[i].id = malloc(sizeof(char)*2);
         folhas[i].id[0] = get_simbolo(lista[i]);
+        folhas[i].id[1] = '\0';
         folhas[i].freq = get_freq(lista[i]);
         folhas[i].pai = NULL;
         folhas[i].f_esq = NULL;
@@ -36,6 +37,26 @@ sub_arvore_t* cria_folhas(caracter_t** lista, int tam){
 
     return folhas;
 }
+
+int folha_get_freq(sub_arvore_t* folha, int i){
+
+    return folha[i].freq;
+}
+
+char* folha_get_id(sub_arvore_t* folha, int i){
+
+    return folha[i].id;
+}
+
+void swap_folhas(sub_arvore_t* folha, int i, int j){
+
+    sub_arvore_t temp;
+    temp = folha[i];
+    folha[i] = folha[j];
+    folha[j] = folha[i];
+}
+
+
 
 /*
 arvore_t* cria_arvore()
@@ -51,6 +72,6 @@ arvore_t* cria_arvore()
 
 	p->raiz = NULL;
 
-	return p;
 }
+	return p;
 */

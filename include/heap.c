@@ -2,21 +2,31 @@
 #include <stdlib.h>
 
 #include "heap.h"
+#include "arvore.h"
 
 
 struct heap
 {
-    caracter_t** A;
+    sub_arvore_t* A;
     int tam_heap;
 };
+/*
+struct sub_arvore{
+    char*   id;
+    int     freq;
 
+    sub_arvore_t* pai;
+    sub_arvore_t* f_esq;
+    sub_arvore_t* f_dir;
+};
+*/
 
-heap_t* inicializa_heap(int tamanho_heap, caracter_t** tabela)
+heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t* folhas)
 {
     heap_t* heap;
     heap = malloc(sizeof(heap_t));
 
-    heap->A = tabela;
+    heap->A = folhas;
     heap->tam_heap = tamanho_heap;
 
     build_heap(heap);
@@ -43,17 +53,16 @@ void min_heapify(heap_t* heap, int i)
 {
     int e = esquerda(i);
     int d = direita(i);
-    caracter_t* temp;
-
     int menor = i;
 
-    if ((e < heap->tam_heap) && (get_freq(heap->A[e]) < get_freq(heap->A[i])))
+
+    if ((e < heap->tam_heap) && (folha_get_freq(heap->A ,e) < folha_get_freq(heap->A, i)))
     {
 //        printf("\n %d troca %d", (get_freq(heap->A[e]), get_freq(heap->A[i])));
         menor = e;
     }
 
-    if ((d < heap->tam_heap) && (get_freq(heap->A[d]) < get_freq(heap->A[menor])))
+    if ((d < heap->tam_heap) && (folha_get_freq(heap->A, d) < folha_get_freq(heap->A, menor) ))
     {
 //        printf("\n %d troca %d", (get_freq(heap->A[d]), get_freq(heap->A[menor])));
         menor = d;
@@ -62,9 +71,9 @@ void min_heapify(heap_t* heap, int i)
     if (menor != i)
     {
 //printf("entrou %d  %d  %d\n",i, get_freq(heap->A[i]),get_freq(heap->A[menor]) );
-        temp = heap->A[i];
-        heap->A[i] = heap->A[menor];
-        heap->A[menor] = temp;
+
+        swap_folhas(heap->A, i, menor);
+
         min_heapify(heap,menor);
     }
 }
@@ -80,15 +89,13 @@ void heapSort(heap_t * heap)
 {
     int tamanho = heap->tam_heap-1;
     int i;
-    caracter_t* temp;
 
- //   build_heap(heap);
+//    build_heap(heap);
 
     for (i=tamanho; i > 0; i--)
     {
-        temp = heap->A[0];
-        heap->A[0] = heap->A[i];
-        heap->A[i] = temp;
+
+        swap_folhas(heap->A, 0, i);
 
         heap->tam_heap--;
         min_heapify(heap, 0);

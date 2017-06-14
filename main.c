@@ -21,7 +21,7 @@ int main()
     for(i=0;i<tam_tabela;i++)
         printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
- //   heap = inicializa_heap(n, tabela);
+//    heap = inicializa_heap(n, tabela);
 
 //    heapSort(heap);
 

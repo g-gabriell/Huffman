@@ -11,4 +11,10 @@ sub_arvore_t* cria_folhas(caracter_t** lista, int tam);
 
 //sub_arvore_t* cria_sub_arvore
 
+
+int folha_get_freq(sub_arvore_t* folha, int i);
+char* folha_get_id(sub_arvore_t* folha, int i);
+
+void swap_folhas(sub_arvore_t* folha, int i, int j);
+
 #endif // ARVORE_H_INCLUDED
