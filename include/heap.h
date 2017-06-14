@@ -6,6 +6,8 @@
 
 typedef struct heap heap_t;
 
+sub_arvore_t* heap_get_sub_arvore(heap_t* heap,int tamanho);
+
 heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t* folhas);
 
 void build_heap(heap_t* heap);
