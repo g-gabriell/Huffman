@@ -5,7 +5,7 @@
 
 typedef struct heap heap_t;
 
-heap_t* inicializa_heap(int tamanho_heap, caracterFreq_t** tabela);
+heap_t* inicializa_heap(int tamanho_heap, caracter_t** tabela);
 
 void build_heap(heap_t* heap);
 

@@ -32,21 +32,33 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="arquivo.txt" />
-		<Unit filename="arvore.c">
+		<Unit filename="include/arvore.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="arvore.h" />
-		<Unit filename="heap.c">
+		<Unit filename="include/arvore.h" />
+		<Unit filename="include/fila.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="heap.h" />
+		<Unit filename="include/fila.h" />
+		<Unit filename="include/heap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/heap.h" />
+		<Unit filename="include/lista_enc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/lista_enc.h" />
+		<Unit filename="include/no.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/no.h" />
+		<Unit filename="include/tabela.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/tabela.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="tabela.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="tabela.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

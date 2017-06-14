@@ -6,12 +6,12 @@
 
 struct heap
 {
-    caracterFreq_t** A;
+    caracter_t** A;
     int tam_heap;
 };
 
 
-heap_t* inicializa_heap(int tamanho_heap, caracterFreq_t** tabela)
+heap_t* inicializa_heap(int tamanho_heap, caracter_t** tabela)
 {
     heap_t* heap;
     heap = malloc(sizeof(heap_t));
@@ -43,7 +43,7 @@ void min_heapify(heap_t* heap, int i)
 {
     int e = esquerda(i);
     int d = direita(i);
-    caracterFreq_t* temp;
+    caracter_t* temp;
 
     int menor = i;
 
@@ -80,13 +80,12 @@ void heapSort(heap_t * heap)
 {
     int tamanho = heap->tam_heap-1;
     int i;
-    caracterFreq_t* temp;
+    caracter_t* temp;
 
  //   build_heap(heap);
 
     for (i=tamanho; i > 0; i--)
     {
-        printf("entrou");
         temp = heap->A[0];
         heap->A[0] = heap->A[i];
         heap->A[i] = temp;

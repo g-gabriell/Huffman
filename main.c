@@ -8,7 +8,7 @@
 
 int main()
 {
-    caracterFreq_t** tabela;
+    caracter_t** tabela;
     int n;  // tamanho tabela
     int i;
 
@@ -19,7 +19,7 @@ int main()
     printf("  %d caracteres \n", n);
 
     for(i=0;i<n;i++)
-        printf("%c -- %d\n", get_character(tabela[i]), get_freq(tabela[i]));
+        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
     heap = inicializa_heap(n, tabela);
 
@@ -27,7 +27,7 @@ int main()
 
     printf("\n\n ");
     for(i=0;i<n;i++)
-        printf("%c -- %d\n", get_character(tabela[i]), get_freq(tabela[i]));
+        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
 
 

@@ -4,13 +4,15 @@
 #include "tabela.h"
 
 
-struct caracterFreq{
-    char character;
+struct caracter{
+    char simbolo;
     int freq;
+//    sub_arvore_t* folha;
+//    char* codigo;
 };
 
 
-caracterFreq_t** ContaFreq(const char* filename, int* num)
+caracter_t** ContaFreq(const char* filename, int* num)
 {
     FILE *file;
 
@@ -18,9 +20,9 @@ caracterFreq_t** ContaFreq(const char* filename, int* num)
     int i;
     char aux;
 
-    caracterFreq_t** tabela;
+    caracter_t** tabela;
 
-    tabela = malloc(sizeof(caracterFreq_t*));
+    tabela = malloc(sizeof(caracter_t*));
 
     if(tabela == NULL)
     {
@@ -40,19 +42,19 @@ caracterFreq_t** ContaFreq(const char* filename, int* num)
     while((aux = fgetc(file)) != EOF){
 
         for(i=0;i<*num;i++){
-            if(aux == tabela[i]->character){
+            if(aux == tabela[i]->simbolo){
                 tabela[i]->freq++;
                 break;
             }
         }
         if(i == *num) {
-            tabela = realloc(tabela, sizeof(caracterFreq_t*)*((*num)+1));
-            tabela[*num] = malloc(sizeof(caracterFreq_t));
+            tabela = realloc(tabela, sizeof(caracter_t*)*((*num)+1));
+            tabela[*num] = malloc(sizeof(caracter_t));
             if( tabela[*num] == NULL || tabela == NULL){
                 perror("realloc_num:");
                 exit(EXIT_FAILURE);
             }
-            tabela[*num]->character = aux;
+            tabela[*num]->simbolo = aux;
             tabela[*num]->freq = 1;
             (*num)++;
         }
@@ -63,18 +65,18 @@ caracterFreq_t** ContaFreq(const char* filename, int* num)
     return tabela;
 }
 
-int get_freq(caracterFreq_t* p)
+int get_freq(caracter_t* p)
 {
     return p->freq;
 }
 
-void set_freq(caracterFreq_t* p, int value)
+void set_freq(caracter_t* p, int value)
 {
     p->freq = value;
 }
 
-char get_character(caracterFreq_t* p)
+char get_simbolo(caracter_t* p)
 {
-    return p->character;
+    return p->simbolo;
 }
 

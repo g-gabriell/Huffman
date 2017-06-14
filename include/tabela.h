@@ -1,11 +1,11 @@
 #ifndef TABELA_H_INCLUDED
 #define TABELA_H_INCLUDED
 
-typedef struct caracterFreq caracterFreq_t;
+typedef struct caracter caracter_t;
 
-caracterFreq_t** ContaFreq(const char* filename, int* num);
-int get_freq(caracterFreq_t* p);
-void set_freq(caracterFreq_t* p, int value);
-char get_character(caracterFreq_t* p);
+caracter_t** ContaFreq(const char* filename, int* num);
+int get_freq(caracter_t* p);
+void set_freq(caracter_t* p, int value);
+char get_simbolo(caracter_t* p);
 
 #endif // TABELA_H_INCLUDED
