@@ -80,3 +80,25 @@ char get_simbolo(caracter_t* p)
     return p->simbolo;
 }
 
+//------------------------------------------------
+
+
+void escrita_em_binario(FILE* file,char* texto)
+{
+    int i;
+    int j;
+    int tamanho;
+    int res;
+
+    tamanho = strlen(texto);
+    for(i=0;i<tamanho;i+=8) {
+        res = 0;
+
+        for(j=0;j<8;j++) {                      // build one byte with 8bits as characters
+            res *= 2;
+            if (texto[i+j]=='1') res++;
+        }
+
+        fprintf(file,"%02X ",res);              // store the byte as 2 hexa-digits
+    }
+}
