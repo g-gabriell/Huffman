@@ -75,7 +75,7 @@ void min_heapify(heap_t* heap, int i)
 
     if (menor != i)
     {
-        swap_sub_arvore(heap->A[i], heap->A[menor]);
+        swap_sub_arvore(&(heap->A[i]), &(heap->A[menor]));
         min_heapify(heap,menor);
     }
 }
@@ -97,7 +97,7 @@ void heapSort(heap_t * heap)
     for (i=tamanho; i > 0; i--)
     {
 
-        swap_sub_arvore(heap->A[0], heap->A[i]);
+        swap_sub_arvore(&(heap->A[0]), &(heap->A[i]));
 
         heap->tam_heap--;
         min_heapify(heap, 0);

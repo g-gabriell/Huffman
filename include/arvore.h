@@ -16,6 +16,6 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 int sub_arvore_get_freq(sub_arvore_t* sub_arvore);
 char sub_arvore__get_id(sub_arvore_t* sub_arvore);
 
-void swap_sub_arvore(sub_arvore_t* A, sub_arvore_t* B);
+void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B);
 
 #endif // ARVORE_H_INCLUDED
