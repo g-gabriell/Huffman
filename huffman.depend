@@ -110,13 +110,13 @@
 
 1497461889 /home/gabriel/Área de Trabalho/Huffman/include/fila.h
 
-1497475851 source:/home/gabriel/Área de Trabalho/Huffman/include/heap.c
+1497637234 source:/home/gabriel/Área de Trabalho/Huffman/include/heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
 	"arvore.h"
 
-1497473333 /home/gabriel/Área de Trabalho/Huffman/include/heap.h
+1497637234 /home/gabriel/Área de Trabalho/Huffman/include/heap.h
 	"tabela.h"
 	"arvore.h"
 
@@ -139,7 +139,7 @@
 	"tabela.h"
 	"arvore.h"
 
-1497469489 source:/home/gabriel/Área de Trabalho/Huffman/main.c
+1497637234 source:/home/gabriel/Área de Trabalho/Huffman/main.c
 	<stdio.h>
 	<stdlib.h>
 	"include/tabela.h"
@@ -147,10 +147,10 @@
 	"include/arvore.h"
 	"include/fila.h"
 
-1497469489 /home/gabriel/Área de Trabalho/Huffman/include/arvore.h
+1497637234 /home/gabriel/Área de Trabalho/Huffman/include/arvore.h
 	"fila.h"
 
-1497475493 source:/home/gabriel/Área de Trabalho/Huffman/include/arvore.c
+1497637234 source:/home/gabriel/Área de Trabalho/Huffman/include/arvore.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
