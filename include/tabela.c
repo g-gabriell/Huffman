@@ -84,7 +84,7 @@ char get_simbolo(caracter_t* p)
 //------------------------------------------------
 
 
-void escrita_em_binario(FILE* file,char* texto)
+void texto_binario(FILE* file,char* texto)
 {
     int i;
     int j;
@@ -95,11 +95,40 @@ void escrita_em_binario(FILE* file,char* texto)
     for(i=0;i<tamanho;i+=8) {
         res = 0;
 
-        for(j=0;j<8;j++) {                      // build one byte with 8bits as characters
+        for(j=0;j<8;j++) {
             res *= 2;
             if (texto[i+j]=='1') res++;
         }
 
-        fprintf(file,"%02X ",res);              // store the byte as 2 hexa-digits
+        fprintf(file,"%02X ",res);
     }
+}
+
+
+  unsigned long binario_decimal(char* binario, int tamanho)
+    {
+        int i;
+        unsigned long decimal = 0;
+        unsigned long peso = 1;
+        binario += tamanho-1;
+        peso = 1;
+        for(i = 0; i < tamanho; ++i, --binario)
+        {
+            if(*binario == '1')
+                decimal += peso;
+            peso *= 2;
+        }
+        return decimal;
+    }
+
+void binario_texto(char* binario, int tam_bin, char* text, int num_simbolos)
+{
+    int i;
+    for(i = 0; i < tam_bin; i+=8, binario += 8)
+    {
+        char *byte = binario;
+        byte[8] = '\0';
+        *text++ = binario_decimal(byte, 8);
+    }
+    text -= num_simbolos;
 }
