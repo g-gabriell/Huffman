@@ -5,8 +5,6 @@
 #include "arvore.h"
 
 
-<<<<<<< HEAD
-
 cria_arvore_huffman(sub_arvore_t* folhas,int tam_folhas){
     int n = tam_folhas;
     fila_t* q = malloc(sizeof(fila_t));
