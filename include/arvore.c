@@ -4,30 +4,14 @@
 #include "heap.h"
 #include "arvore.h"
 
-
-cria_arvore_huffman(sub_arvore_t* folhas,int tam_folhas){
-    int n = tam_folhas;
-    fila_t* q = malloc(sizeof(fila_t));
-    inicializa_heap(n, )
-
-    for(i = 1;i <= n-1; i++){
-        sub_arvore_t* z = cria_sub_arvore()
-
-        z->f_esq = x = min_heapify()
-        z->f_dir = y = min
-        z.freq = x.freq + y.freq
-
-        enqueue(z, q)
-    }
-
-    }
-/*
-=======
->>>>>>> 414274aa72de1b2099c854743e64c578100e5a8b
 struct arvore{
     sub_arvore_t* raiz;
 };
 
+<<<<<<< HEAD
+cria_arvore_huffman(sub_arvore_t* folhas,int tam_folhas){
+    int n = tam_folhas;
+=======
 struct sub_arvore{
     char*   id;
     int     freq;
@@ -36,6 +20,30 @@ struct sub_arvore{
     sub_arvore_t* f_esq;
     sub_arvore_t* f_dir;
 };
+
+
+
+cria_arvore_huffman(heap_t* heap,int tam_heap){
+
+    int n = tam_heap;
+>>>>>>> 3c11f18f900e2ec7ba8fc16f2e08cc7456d1420e
+    fila_t* q = malloc(sizeof(fila_t));
+
+
+    build_heap(heap);
+
+
+    for(i = 1;i <= n-1; i++){
+        sub_arvore_t* z = cria_sub_arvore()
+
+        z->f_esq = x = retira_menor()
+        z->f_dir = y = retira_menor
+        z.freq = x.freq + y.freq
+
+        enqueue(z, q)
+    }
+
+    }
 
 sub_arvore_t* cria_folhas(caracter_t** lista, int tam){
 

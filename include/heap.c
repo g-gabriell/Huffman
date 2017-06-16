@@ -20,6 +20,13 @@ struct sub_arvore{
     sub_arvore_t* f_dir;
 };
 */
+void retira_menor(heap_t* heap){
+
+    build_heap(heap);
+    set_tamanho_heap(heap, heap->tam_heap-1);
+
+//    return heap->A[heap->tam_heap];
+}
 
 heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t* folhas)
 {

@@ -12,7 +12,8 @@ int main()
     int tam_tabela;  // tamanho tabela
     int i;
 
-//    heap_t* heap;
+    sub_arvore_t* folhas;
+    heap_t* heap;
 
     tabela = ContaFreq("arquivo.txt", &tam_tabela);
 
@@ -21,14 +22,10 @@ int main()
     for(i=0;i<tam_tabela;i++)
         printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
-//    heap = inicializa_heap(n, tabela);
+    folhas = cria_folhas(tabela, tam_tabela);
+    heap = inicializa_heap(tam_tabela, folhas);
 
-//    heapSort(heap);
-
-    printf("\n\n ");
-    for(i=0;i<tam_tabela;i++)
-        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
-
+    cria_arvore_huffman( heap, tam_tabela);
 
 
 
