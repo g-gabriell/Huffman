@@ -20,12 +20,15 @@ heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t** folhas)
     heap->A = folhas;
     heap->tam_heap = tamanho_heap;
 
+    printf("INICIALIZA HEAP\n");
     build_heap(heap);
 
-    printf("INICIALIZA HEAP\n");
     int i;
+
+    printf("TAMANHO HEAP %d\n", heap->tam_heap);
+
     for(i=0;i<heap->tam_heap;i++)
-        printf("%c -- %d\n", sub_arvore__get_id(heap->A[i]), sub_arvore_get_freq(heap->A[i]));
+        printf("%d : %c -- %d\n", i, sub_arvore__get_id(heap->A[i]), sub_arvore_get_freq(heap->A[i]));
 
     return heap;
 }
@@ -54,25 +57,25 @@ void min_heapify(heap_t* heap, int i)
 
     if ((e < heap->tam_heap) && (sub_arvore_get_freq(heap->A[e]) < sub_arvore_get_freq(heap->A[i])))
     {
-//        printf("\n %d troca %d", (get_freq(heap->A[e]), get_freq(heap->A[i])));
+        #ifdef DEBUG
+        printf("\n %d troca %d", (get_freq(heap->A[e]), get_freq(heap->A[i])));
         printf("entrou %d, %d e %d\n", i, e, menor);
         printf("freq %d e %d",sub_arvore_get_freq(heap->A[e]), sub_arvore_get_freq(heap->A[i]));
+        #endif // DEBUG
         menor = e;
     }
 
     if ((d < heap->tam_heap) && (sub_arvore_get_freq(heap->A[d]) < sub_arvore_get_freq(heap->A[menor]) ))
     {
-//        printf("\n %d troca %d", (get_freq(heap->A[d]), get_freq(heap->A[menor])));
+        #ifdef DEBUG
         printf("entrou %d, %d e %d\n", i, d, menor);
+        #endif // DEBUG
         menor = d;
     }
 
     if (menor != i)
     {
-//printf("entrou %d  %d  %d\n",i, get_freq(heap->A[i]),get_freq(heap->A[menor]) );
-
         swap_sub_arvore(heap->A[i], heap->A[menor]);
-
         min_heapify(heap,menor);
     }
 }
