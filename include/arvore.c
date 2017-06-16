@@ -8,12 +8,8 @@ struct arvore{
     sub_arvore_t* raiz;
 };
 
-<<<<<<< HEAD
-cria_arvore_huffman(sub_arvore_t* folhas,int tam_folhas){
-    int n = tam_folhas;
-=======
 struct sub_arvore{
-    char*   id;
+    char   id;
     int     freq;
 
     sub_arvore_t* pai;
@@ -22,15 +18,29 @@ struct sub_arvore{
 };
 
 
+arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
-cria_arvore_huffman(heap_t* heap,int tam_heap){
+    arvore_t* arvore;
+    sub_arvore_t** folhas;
+    heap_t* heap;
 
-    int n = tam_heap;
->>>>>>> 3c11f18f900e2ec7ba8fc16f2e08cc7456d1420e
-    fila_t* q = malloc(sizeof(fila_t));
+    arvore = malloc(sizeof(arvore_t));
+    folhas = cria_folhas(lista_carcteres, tam_lista);
+
+    int i;
+    for(i=0;i<tam_lista;i++)
+        printf("%c -- %d\n", sub_arvore__get_id(folhas[i]), sub_arvore_get_freq(folhas[i]));
+
+    heap = inicializa_heap(tam_lista, folhas);
 
 
-    build_heap(heap);
+
+
+
+/*
+
+    int n = tam_lista;
+
 
 
     for(i = 1;i <= n-1; i++){
@@ -42,63 +52,62 @@ cria_arvore_huffman(heap_t* heap,int tam_heap){
 
         enqueue(z, q)
     }
+*/
+    return arvore;
+}
 
-    }
-
-sub_arvore_t* cria_folhas(caracter_t** lista, int tam){
+sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
 
     int i;
-    sub_arvore_t* folhas;
+    sub_arvore_t** folhas;
 
-    folhas = malloc(sizeof(sub_arvore_t)*tam);
+    folhas = malloc(sizeof(sub_arvore_t*)*tam);
 
     for(i=0;i<tam;i++){
-        folhas[i].id = malloc(sizeof(char)*2);
-        folhas[i].id[0] = get_simbolo(lista[i]);
-        folhas[i].id[1] = '\0';
-        folhas[i].freq = get_freq(lista[i]);
-        folhas[i].pai = NULL;
-        folhas[i].f_esq = NULL;
-        folhas[i].f_dir = NULL;
+        folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
     }
-
     return folhas;
 }
 
-int folha_get_freq(sub_arvore_t* folha, int i){
+sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir){
 
-    return folha[i].freq;
+    sub_arvore_t* sub_arvore;
+
+    sub_arvore = malloc(sizeof(sub_arvore_t));
+
+    sub_arvore->freq = frequencia;
+    sub_arvore->id = nome;
+    sub_arvore->pai = NULL;
+    sub_arvore->f_esq = f_esq;
+    sub_arvore->f_dir = f_dir;
+
+    return sub_arvore;
 }
-
-char* folha_get_id(sub_arvore_t* folha, int i){
-
-    return folha[i].id;
-}
-
-void swap_folhas(sub_arvore_t* folha, int i, int j){
-
-    sub_arvore_t temp;
-    temp = folha[i];
-    folha[i] = folha[j];
-    folha[j] = folha[i];
-}
-
 
 
 /*
-arvore_t* cria_arvore()
-{
-    arvore_t *p = NULL;
-
-	p = (arvore_t*) malloc(sizeof(arvore_t));
-
-	if (p == NULL)	{
-		perror("cria_arvore:");
-		exit(EXIT_FAILURE);
-	}
-
-	p->raiz = NULL;
+void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai){
 
 }
-	return p;
 */
+
+
+int sub_arvore_get_freq(sub_arvore_t* sub_arvore){
+
+    return sub_arvore->freq;
+}
+
+
+char sub_arvore__get_id(sub_arvore_t* sub_arvore){
+
+    return sub_arvore->id;
+}
+
+
+void swap_sub_arvore(sub_arvore_t* A, sub_arvore_t* B){
+
+    sub_arvore_t* temp;
+    temp = A;
+    A = B;
+    B = temp;
+}

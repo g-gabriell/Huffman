@@ -10,22 +10,28 @@ int main()
 {
     caracter_t** tabela;
     int tam_tabela;  // tamanho tabela
+
+    arvore_t* arvore;
     int i;
 
-    sub_arvore_t* folhas;
-    heap_t* heap;
-
     tabela = ContaFreq("arquivo.txt", &tam_tabela);
+//
+//printf("  %d caracteres \n", tam_tabela);
+//
+//    for(i=0;i<tam_tabela;i++)
+//        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
+//
 
-    printf("  %d caracteres \n", tam_tabela);
 
-    for(i=0;i<tam_tabela;i++)
-        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
 
-    folhas = cria_folhas(tabela, tam_tabela);
-    heap = inicializa_heap(tam_tabela, folhas);
+    arvore = cria_arvore_huffman(tabela, tam_tabela);
 
-    cria_arvore_huffman( heap, tam_tabela);
+
+
+//
+//    folhas = cria_folhas(tabela, tam_tabela);
+//    heap = inicializa_heap(tam_tabela, folhas);
+
 
 
 
