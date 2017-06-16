@@ -81,6 +81,10 @@ char get_simbolo(caracter_t* p)
     return p->simbolo;
 }
 
+void set_folha(caracter_t* caracter, sub_arvore_t* folha)
+{
+    caracter->folha = folha;
+}
 //------------------------------------------------
 
 

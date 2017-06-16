@@ -53,7 +53,9 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     arvore->raiz = retira_menor(heap);
 
+
     destroi_heap(heap);
+    free(folhas);
 
 /*
 
@@ -83,6 +85,8 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
 
     for(i=0;i<tam;i++){
         folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
+        set_folha(lista[i], folhas[i]);
+
     }
     return folhas;
 }

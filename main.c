@@ -4,7 +4,6 @@
 #include "include/tabela.h"
 #include "include/heap.h"
 #include "include/arvore.h"
-#include "include/fila.h"
 
 int main()
 {
