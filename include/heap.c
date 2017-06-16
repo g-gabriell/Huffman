@@ -114,12 +114,45 @@ int tamanho_heap(heap_t* heap)
     return heap->tam_heap;
 }
 
-/*
-void retira_menor(heap_t* heap){
+int get_tam_heap(heap_t* heap)
+{
+    return heap->tam_heap;
+}
+
+sub_arvore_t* retira_menor(heap_t* heap)
+{
+    sub_arvore_t* menor;
+    menor = heap->A[0];
+
+    heap->tam_heap--;
+
+    swap_sub_arvore(&(heap->A[0]),&(heap->A[heap->tam_heap]));
+
+    heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
 
     build_heap(heap);
-    set_tamanho_heap(heap, heap->tam_heap-1);
 
-//    return heap->A[heap->tam_heap];
-}*/
+    return menor;
 
+}
+
+
+void heap_insere(heap_t* heap, sub_arvore_t* sub_arvore)
+{
+
+    heap->tam_heap++;
+    heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
+
+    heap->A[heap->tam_heap -1] = sub_arvore;
+
+    build_heap(heap);
+
+}
+
+
+void destroi_heap(heap_t* heap)
+{
+
+    free(heap->A);
+    free(heap);
+}

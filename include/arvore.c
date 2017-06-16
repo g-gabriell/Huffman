@@ -35,9 +35,25 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     heap = inicializa_heap(tam_lista, folhas);
 
+    sub_arvore_t* filho_e;
+    sub_arvore_t* filho_d;
+    sub_arvore_t* pai;
 
+    while(get_tam_heap(heap) > 1){
 
+        filho_e = retira_menor(heap);
+        filho_d = retira_menor(heap);
 
+        pai = cria_sub_arvore(sub_arvore_get_freq(filho_e) + sub_arvore_get_freq(filho_d), '+', filho_e, filho_d);
+        sub_arvore_set_pai(filho_e, pai);
+        sub_arvore_set_pai(filho_d, pai);
+
+        heap_insere(heap, pai);
+    }
+
+    arvore->raiz = retira_menor(heap);
+
+    destroi_heap(heap);
 
 /*
 
@@ -87,11 +103,12 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 }
 
 
-/*
-void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai){
 
+void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
+{
+    filho->pai = pai;
 }
-*/
+
 
 
 int sub_arvore_get_freq(sub_arvore_t* sub_arvore){

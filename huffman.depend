@@ -43,13 +43,13 @@
 	<stdlib.h>
 	"tabela.h"
 
-1497639965 source:c:\users\jhonatan\documents\huffman\include\arvore.c
+1497642605 source:c:\users\jhonatan\documents\huffman\include\arvore.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
 	"arvore.h"
 
-1497629834 c:\users\jhonatan\documents\huffman\include\heap.h
+1497642849 c:\users\jhonatan\documents\huffman\include\heap.h
 	"tabela.h"
 	"arvore.h"
 
@@ -69,13 +69,13 @@
 
 1467832890 c:\users\jhonatan\documents\huffman\include\fila.h
 
-1497639984 source:c:\users\jhonatan\documents\huffman\include\heap.c
+1497642641 source:c:\users\jhonatan\documents\huffman\include\heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
 	"arvore.h"
 
-1497629314 source:c:\users\jhonatan\documents\huffman\include\tabela.c
+1497640269 source:c:\users\jhonatan\documents\huffman\include\tabela.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -93,7 +93,7 @@
 	<stdlib.h>
 	"no.h"
 
-1497639939 c:\users\jhonatan\documents\huffman\include\arvore.h
+1497642779 c:\users\jhonatan\documents\huffman\include\arvore.h
 	"fila.h"
 
 1497461889 source:/home/gabriel/Área de Trabalho/Huffman/include/fila.c
