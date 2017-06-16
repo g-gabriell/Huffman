@@ -4,7 +4,7 @@
 #include "include/tabela.h"
 #include "include/heap.h"
 #include "include/arvore.h"
-#include "include/fila.h"
+
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
 
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
-
+    destroi_arvore(arvore);
 
 //
 //    folhas = cria_folhas(tabela, tam_tabela);

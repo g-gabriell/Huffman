@@ -103,6 +103,9 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
     return sub_arvore;
 }
 
+sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho){
+        return filho->pai;
+    }
 
 
 void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
@@ -152,3 +155,21 @@ void destroi_arvore(arvore_t* arvore){
     sub_arvore_t* raiz = arvore->raiz;
     free_posordem(raiz);
 }
+
+
+
+char* cria_binario(sub_arvore_t* folha){
+    pilha_t* pilha = cria_pilha();
+    pilha_t* pai = sub_arvore_get_pai(folha);
+    while(pai != NULL){
+
+        if(pai->f_esq == folha)
+            //push(folha)
+        if(pai->f_dir == folha)
+            //push(folha)
+
+        folha = pai;
+        pai = sub_arvore_get_pai(pai);
+        }
+    return
+    }
