@@ -29,9 +29,11 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
     arvore = malloc(sizeof(arvore_t));
     folhas = cria_folhas(lista_carcteres, tam_lista);
 
+#ifdef DEBUG
     int i;
     for(i=0;i<tam_lista;i++)
         printf("%c -- %d\n", sub_arvore__get_id(folhas[i]), sub_arvore_get_freq(folhas[i]));
+#endif // DEBUG
 
     heap = inicializa_heap(tam_lista, folhas);
 
@@ -130,7 +132,7 @@ char sub_arvore__get_id(sub_arvore_t* sub_arvore){
 void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B){
 
 #ifdef DEBUG
-printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
+printf("swap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 #endif
 
     sub_arvore_t* temp;
@@ -138,7 +140,5 @@ printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
     *A = *B;
     *B = temp;
 
-#ifdef DEBUG
-printf(" %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
-#endif
+
 }

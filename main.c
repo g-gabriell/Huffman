@@ -22,7 +22,6 @@ int main()
 //
 
 
-
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
 

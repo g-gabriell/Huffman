@@ -30,20 +30,19 @@
 
 1496180113 c:\users\jhonatan\documents\huffman\tabela.h
 
-1497634407 source:c:\users\jhonatan\documents\huffman\main.c
+1497714587 source:c:\users\jhonatan\documents\huffman\main.c
 	<stdio.h>
 	<stdlib.h>
 	"include/tabela.h"
 	"include/heap.h"
 	"include/arvore.h"
-	"include/fila.h"
 
 1496259497 source:c:\users\jhonatan\documents\huffman\tabela.c
 	<stdio.h>
 	<stdlib.h>
 	"tabela.h"
 
-1497645975 source:c:\users\jhonatan\documents\huffman\include\arvore.c
+1497714627 source:c:\users\jhonatan\documents\huffman\include\arvore.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
@@ -70,7 +69,7 @@
 
 1467832890 c:\users\jhonatan\documents\huffman\include\fila.h
 
-1497642849 source:c:\users\jhonatan\documents\huffman\include\heap.c
+1497714538 source:c:\users\jhonatan\documents\huffman\include\heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"

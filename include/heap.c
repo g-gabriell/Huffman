@@ -23,12 +23,12 @@ heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t** folhas)
     printf("INICIALIZA HEAP\n");
     build_heap(heap);
 
+    #ifdef DEBUG
     int i;
-
     printf("TAMANHO HEAP %d\n", heap->tam_heap);
-
     for(i=0;i<heap->tam_heap;i++)
         printf("%d : %c -- %d\n", i, sub_arvore__get_id(heap->A[i]), sub_arvore_get_freq(heap->A[i]));
+    #endif // DEBUG
 
     return heap;
 }
@@ -121,16 +121,20 @@ int get_tam_heap(heap_t* heap)
 
 sub_arvore_t* retira_menor(heap_t* heap)
 {
+    printf("\nRetira menor:");
+
     sub_arvore_t* menor;
     menor = heap->A[0];
 
     heap->tam_heap--;
+    if(heap->tam_heap >0){
 
-    swap_sub_arvore(&(heap->A[0]),&(heap->A[heap->tam_heap]));
+        swap_sub_arvore(&(heap->A[0]),&(heap->A[heap->tam_heap]));
+    }
+        heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
 
-    heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
+        build_heap(heap);
 
-    build_heap(heap);
 
     return menor;
 
