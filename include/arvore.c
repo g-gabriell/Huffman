@@ -131,6 +131,7 @@ printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 printf(" %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 #endif
 }
+<<<<<<< HEAD
 
 void free_posordem(sub_arvore_t* vertice){
     if(vertice == NULL)
@@ -182,3 +183,56 @@ char* cria_binario(sub_arvore_t* folha){
     return code;
    }
 
+=======
+
+void free_posordem(sub_arvore_t* vertice){
+    if(vertice == NULL)
+        return;
+    free_posordem(vertice->f_esq);
+    free_posordem(vertice->f_dir);
+    free(vertice);
+}
+
+void destroi_arvore(arvore_t* arvore){
+    sub_arvore_t* raiz = arvore->raiz;
+    free_posordem(raiz);
+}
+
+
+
+char* cria_binario(sub_arvore_t* folha){
+
+    char* code;
+    char um = '1';
+    char zero = '0';
+
+    pilha_t* pilha = cria_pilha();
+    push('\0',pilha);
+
+    sub_arvore_t* filho = folha;
+    sub_arvore_t* pai = sub_arvore_get_pai(filho);
+
+    while(pai != NULL){
+
+        if(pai->f_esq == filho)
+            push(&zero,pilha);
+        if(pai->f_dir == filho)
+            push(&um,pilha);
+
+        filho = pai;
+        pai = sub_arvore_get_pai(pai);
+    }
+
+    int i, tam_pilha;
+    tam_pilha = tamanho_pilha(pilha);
+    code = (char*)malloc(sizeof(char)*tam_pilha);
+
+    for(i=0;i<tam_pilha;i++)
+        code[i] = (char*)pop(pilha);
+
+    destroi_pilha(pilha);
+
+    return code;
+   }
+
+>>>>>>> origin/jhonatan
