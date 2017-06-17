@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="include/pilha.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="163" topLine="4" />
@@ -15,6 +16,21 @@
 	<File name="include/arvore.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="401" topLine="0" />
+=======
+	<File name="include\lista_enc.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="486" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\lista_enc.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2239" topLine="102" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="331" topLine="3" />
+>>>>>>> origin/jhonatan
 		</Cursor>
 	</File>
 	<File name="include/tabela.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,6 +38,7 @@
 			<Cursor1 position="305" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="include/lista_enc.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="486" topLine="0" />
@@ -48,23 +65,66 @@
 		</Cursor>
 	</File>
 	<File name="include/no.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="include\pilha.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="535" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="include\heap.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\pilha.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="183" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\no.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="include\arvore.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="402" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\no.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> origin/jhonatan
 		<Cursor>
 			<Cursor1 position="1268" topLine="68" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="include/no.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="1" />
 		</Cursor>
 	</File>
 	<File name="include/lista_enc.c" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="include\tabela.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2239" topLine="102" />
+			<Cursor1 position="305" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="include\tabela.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> origin/jhonatan
+		<Cursor>
+			<Cursor1 position="1165" topLine="114" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
 	<File name="include/heap.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2880" topLine="116" />
+=======
+	<File name="include\arvore.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2903" topLine="143" />
+>>>>>>> origin/jhonatan
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

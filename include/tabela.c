@@ -81,6 +81,21 @@ char get_simbolo(caracter_t* p)
     return p->simbolo;
 }
 
+
+void set_folha(caracter_t* p, sub_arvore_t* folha){
+    p->folha = folha;
+}
+
+
+sub_arvore_t* character_get_folha(caracter_t* character){
+    return character->folha;
+}
+
+void character_set_code(caracter_t* character, char* codigo){
+    character->codigo = codigo;
+}
+
+
 //------------------------------------------------
 
 
@@ -132,6 +147,7 @@ void binario_texto(char* binario, int tam_bin, char* text, int num_simbolos)
     }
     text -= num_simbolos;
 }
+<<<<<<< HEAD
 
 sub_arvore_t* character_get_folha(caracter_t* character){
     sub_arvore_t* folha = character->folha;
@@ -141,3 +157,5 @@ sub_arvore_t* character_get_folha(caracter_t* character){
 void character_set_code(caracter_t* character, char* codigo){
     character->codigo = codigo;
 }
+=======
+>>>>>>> origin/jhonatan
