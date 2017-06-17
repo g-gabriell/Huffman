@@ -17,19 +17,20 @@ int main()
     int i;
 
     tabela = ContaFreq("arquivo.txt", &tam_tabela);
-//
-//printf("  %d caracteres \n", tam_tabela);
-//
-//    for(i=0;i<tam_tabela;i++)
-//        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
-//
+
+printf("  %d caracteres \n", tam_tabela);
+
+    for(i=0;i<tam_tabela;i++)
+        printf("%c -- %d\n", get_simbolo(tabela[i]), get_freq(tabela[i]));
+
 
 
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
-    printf(" Teste codigo: %s    \n ", cria_binario(character_get_folha(tabela[0])));
+    for(i=0;i<tam_tabela;i++)
+    printf(" %c -- %s    \n ", get_simbolo(tabela[i]), cria_binario(character_get_folha(tabela[i])));
 
-    destroi_arvore(arvore);
+ //   destroi_arvore(arvore);
 
 
     return 0;

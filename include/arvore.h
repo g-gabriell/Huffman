@@ -10,6 +10,7 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 char* cria_binario(sub_arvore_t* folha);
 
 void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai);
+sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho);
 
 int sub_arvore_get_freq(sub_arvore_t* sub_arvore);
 char sub_arvore__get_id(sub_arvore_t* sub_arvore);

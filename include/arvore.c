@@ -72,6 +72,7 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
 
     for(i=0;i<tam;i++){
         folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
+        set_folha(lista[i], folhas[i]);
 
     }
     return folhas;
@@ -93,8 +94,18 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 }
 
 sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho){
-        return filho->pai;
+    if(filho == NULL){
+        printf("sub_arvore_get_pai: filho invalido");
+        exit(2);
     }
+
+    if(filho == NULL){
+        printf("sub_arvore_get_pai: pai invalido");
+        exit(3);
+    }
+
+    return filho->pai;
+}
 
 
 void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
@@ -150,11 +161,9 @@ void destroi_arvore(arvore_t* arvore){
 char* cria_binario(sub_arvore_t* folha){
 
     char* code;
-    char um = '1';
-    char zero = '0';
 
     pilha_t* pilha = cria_pilha();
-    push('\0',pilha);
+    push('\0',pilha);       //fim da string
 
     sub_arvore_t* filho = folha;
     sub_arvore_t* pai = sub_arvore_get_pai(filho);
@@ -162,9 +171,9 @@ char* cria_binario(sub_arvore_t* folha){
     while(pai != NULL){
 
         if(pai->f_esq == filho)
-            push(&zero,pilha);
+            push('0',pilha);
         if(pai->f_dir == filho)
-            push(&um,pilha);
+            push('1',pilha);
 
         filho = pai;
         pai = sub_arvore_get_pai(pai);
@@ -172,10 +181,10 @@ char* cria_binario(sub_arvore_t* folha){
 
     int i, tam_pilha;
     tam_pilha = tamanho_pilha(pilha);
-    code = (char*)malloc(sizeof(char)*tam_pilha);
+    code = malloc(sizeof(char)*tam_pilha +1);
 
     for(i=0;i<tam_pilha;i++)
-        code[i] = (char*)pop(pilha);
+        code[i] = (char)pop(pilha);
 
     destroi_pilha(pilha);
 
