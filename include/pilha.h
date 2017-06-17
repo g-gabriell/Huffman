@@ -1,6 +1,8 @@
 #ifndef PILHA_H_INCLUDED
 #define PILHA_H_INCLUDED
 
+#include "lista_enc.h"
+
 typedef struct pilhas pilha_t;
 
 pilha_t * cria_pilha (void);

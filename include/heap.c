@@ -121,7 +121,6 @@ int get_tam_heap(heap_t* heap)
 
 sub_arvore_t* retira_menor(heap_t* heap)
 {
-    printf("\nRetira menor:");
 
     sub_arvore_t* menor;
     menor = heap->A[0];
