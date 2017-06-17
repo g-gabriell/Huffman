@@ -191,7 +191,7 @@ char* cria_binario(sub_arvore_t* folha){
     return code;
    }
 
-void imprime_preordem(sub_arvore_t* vertice, char buffer,int indice){
+int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
 
     if (vertice == NULL)
         return;
@@ -206,22 +206,14 @@ void imprime_preordem(sub_arvore_t* vertice, char buffer,int indice){
     i++;
     imprime_preordem(vertice->f_esq, buffer, i);
     buffer[i] = ',';
-    i++
+    i++;
     imprime_preordem(vertice->f_esq, buffer, i);
-    uffer[i] = '}';
-    i++
+    buffer[i] = '}';
+    i++;
+    return i;
 }
 
-void imprime_arvore(arvore_t* arvore,char* filename_entrada,char* filename_saida){
+sub_arvore_t* arvore_get_raiz(arvore_t* arvore){
 
-    FILE* input = fopen(filename_input, "r");
-    FILE* output = fopen(filename_output, "w");
-
-    char buffer[3065];
-    int indice = 0;
-
-    sub_arvore_t* raiz = arvore->raiz;
-    imprime_preordem(raiz, buffer, indice);
-
-    int tamanho_buffer = strlen(buffer);
+    return arvore->raiz;
 }

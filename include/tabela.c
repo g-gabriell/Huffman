@@ -147,15 +147,18 @@ void binario_texto(char* binario, int tam_bin, char* text, int num_simbolos)
     }
     text -= num_simbolos;
 }
-<<<<<<< HEAD
 
-sub_arvore_t* character_get_folha(caracter_t* character){
-    sub_arvore_t* folha = character->folha;
-    return folha;
+void imprime_binario(caracter_t** tabela, arvore_t* arvore,char* filename_input,char* filename_output){
+
+    FILE* input = fopen(filename_input, "r");
+    FILE* output = fopen(filename_output, "w");
+
+    char buffer[3065];
+    int indice = 0;
+
+    sub_arvore_t* raiz = arvore_get_raiz(arvore);
+    int i = imprime_preordem(raiz, buffer, indice);
+    buffer[i] = '/0';
+    int tamanho_buffer = strlen(buffer);
 }
 
-void character_set_code(caracter_t* character, char* codigo){
-    character->codigo = codigo;
-}
-=======
->>>>>>> origin/jhonatan
