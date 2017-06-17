@@ -4,6 +4,8 @@
 #include "heap.h"
 #include "arvore.h"
 
+#define DEBUG
+
 struct arvore{
     sub_arvore_t* raiz;
 };
@@ -33,9 +35,27 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     heap = inicializa_heap(tam_lista, folhas);
 
+    sub_arvore_t* filho_e;
+    sub_arvore_t* filho_d;
+    sub_arvore_t* pai;
+
+    while(get_tam_heap(heap) > 1){
+
+        filho_e = retira_menor(heap);
+        filho_d = retira_menor(heap);
+
+        pai = cria_sub_arvore(sub_arvore_get_freq(filho_e) + sub_arvore_get_freq(filho_d), '+', filho_e, filho_d);
+        sub_arvore_set_pai(filho_e, pai);
+        sub_arvore_set_pai(filho_d, pai);
+
+        heap_insere(heap, pai);
+    }
+
+    arvore->raiz = retira_menor(heap);
 
 
-
+    destroi_heap(heap);
+    free(folhas);
 
 /*
 
@@ -65,6 +85,8 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
 
     for(i=0;i<tam;i++){
         folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
+        set_folha(lista[i], folhas[i]);
+
     }
     return folhas;
 }
@@ -85,11 +107,12 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 }
 
 
-/*
-void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai){
 
+void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
+{
+    filho->pai = pai;
 }
-*/
+
 
 
 int sub_arvore_get_freq(sub_arvore_t* sub_arvore){
@@ -104,10 +127,18 @@ char sub_arvore__get_id(sub_arvore_t* sub_arvore){
 }
 
 
-void swap_sub_arvore(sub_arvore_t* A, sub_arvore_t* B){
+void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B){
+
+#ifdef DEBUG
+printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
+#endif
 
     sub_arvore_t* temp;
-    temp = A;
-    A = B;
-    B = temp;
+    temp = *A;
+    *A = *B;
+    *B = temp;
+
+#ifdef DEBUG
+printf(" %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
+#endif
 }
