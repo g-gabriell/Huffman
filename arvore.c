@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "pilha.h"
 #include "heap.h"
 #include "arvore.h"
 
@@ -158,18 +159,18 @@ void destroi_arvore(arvore_t* arvore){
 
 
 
-char* cria_binario(sub_arvore_t* folha){
+pilha_t* cria_binario(sub_arvore_t* folha){
     pilha_t* pilha = cria_pilha();
-    pilha_t* pai = sub_arvore_get_pai(folha);
+    sub_arvore_t* pai = sub_arvore_get_pai(folha);
     while(pai != NULL){
 
         if(pai->f_esq == folha)
-            //push(folha)
+            push('0',pilha);
         if(pai->f_dir == folha)
-            //push(folha)
+            push('1',pilha);
 
         folha = pai;
         pai = sub_arvore_get_pai(pai);
         }
-    return
+    return pilha;
     }
