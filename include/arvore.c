@@ -161,4 +161,5 @@ pilha_t* cria_binario(sub_arvore_t* folha){
         pai = sub_arvore_get_pai(pai);
         }
     return pilha;
-    }
+   }
+
