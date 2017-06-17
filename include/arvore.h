@@ -15,4 +15,7 @@ char sub_arvore__get_id(sub_arvore_t* sub_arvore);
 
 void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B);
 
+void free_posordem(sub_arvore_t* vertice);
+void destroi_arvore(arvore_t* arvore);
+
 #endif // ARVORE_H_INCLUDED

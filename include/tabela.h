@@ -9,6 +9,6 @@ caracter_t** ContaFreq(const char* filename, int* num);
 int get_freq(caracter_t* p);
 void set_freq(caracter_t* p, int value);
 char get_simbolo(caracter_t* p);
-void set_folha(caracter_t* caracter, sub_arvore_t* folha);
-
+sub_arvore_t* character_get_folha(caracter_t* character);
+void character_set_code(caracter_t* character, char* codigo);
 #endif // TABELA_H_INCLUDED
