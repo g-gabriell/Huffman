@@ -1,60 +1,53 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include "lista_enc.h"
+#include <stdlib.h>
+
 #include "pilha.h"
+#include "lista_enc.h"
+#include "no.h"
+
 
 struct pilhas {
-    lista_enc_t *lista;
+    lista_enc_t* lista;
 };
 
 
-//cria uma pilha para inteiros
-pilha_t * cria_pilha (void)
+pilha_t* cria_pilha (void)
 {
-    pilha_t *pilha = (pilha_t*)malloc(sizeof(pilha_t));
 
+    pilha_t* pilha = malloc(sizeof(pilha_t));// = NULL;
+    if(pilha == NULL){
+        perror("cria_pilha:");
+        exit(EXIT_FAILURE);
+    }
     pilha->lista = cria_lista_enc();
 
     return pilha;
 }
 
-//adiciona elemento
-void push(void* dado, pilha_t* pilha)
+void push(void* dado, pilha_t *pilha)
 {
-    no_t* no = cria_no(dado);
-    add_cabeca(pilha->lista, no);
-    if(pilha == NULL)
-    {
-        fprintf(stderr,"pilha invalida!\n");
-        exit(EXIT_FAILURE);
-    }
+    no_t* elemento;
+    elemento = cria_no(dado);
+    add_cabeca( pilha->lista, elemento);
+
 }
 
-//retira elemento do topo
-void* pop(pilha_t* pilha)
+void* pop(pilha_t *pilha)
 {
-    if (pilha == NULL) {
-        fprintf(stderr, "pilha invalida!\n");
-        return 0;
-    }
-    if (tamanho(pilha->lista)==0)
-        fprintf(stderr,"pilha vazia!\n");
-    return remove_cabeca(pilha->lista);
+    void* dado;
+    dado = remove_cabeca(pilha->lista);
+
+    return dado;
 }
 
-void* topo(pilha_t* pilha)
-{
-    return dado_cabeca(pilha->lista);
-}
-
-int tamanhop(pilha_t* pilha)
+int tamanho_pilha(pilha_t *pilha)
 {
     return tamanho(pilha->lista);
 }
 
-int vazia(pilha_t* pilha)
+int pilha_vazia(pilha_t *pilha)
 {
-    return !tamanho(pilha->lista);
+    return vazia(pilha->lista);
 }
 
 void destroi_pilha(pilha_t* pilha)
@@ -62,5 +55,3 @@ void destroi_pilha(pilha_t* pilha)
     free (pilha->lista);
     free (pilha);
 }
-
-

@@ -5,6 +5,7 @@
 #include "include/heap.h"
 #include "include/arvore.h"
 #include "include/pilha.h"
+#include "include/lista_enc.h"
 
 int main()
 {
