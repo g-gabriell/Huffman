@@ -5,7 +5,7 @@
 #include "heap.h"
 #include "arvore.h"
 
-#define DEBUG
+//#define DEBUG
 
 struct arvore{
     sub_arvore_t* raiz;
@@ -147,19 +147,38 @@ void destroi_arvore(arvore_t* arvore){
 
 
 
-pilha_t* cria_binario(sub_arvore_t* folha){
+char* cria_binario(sub_arvore_t* folha){
+
+    char* code;
+    char um = '1';
+    char zero = '0';
+
     pilha_t* pilha = cria_pilha();
-    sub_arvore_t* pai = sub_arvore_get_pai(folha);
+    push('\0',pilha);
+
+    sub_arvore_t* filho = folha;
+    sub_arvore_t* pai = sub_arvore_get_pai(filho);
+
     while(pai != NULL){
 
-//        if(pai->f_esq == folha)
-//            push('0',pilha);
-//        if(pai->f_dir == folha)
-//            push('1',pilha);
+        if(pai->f_esq == filho)
+            push(&zero,pilha);
+        if(pai->f_dir == filho)
+            push(&um,pilha);
 
-        folha = pai;
+        filho = pai;
         pai = sub_arvore_get_pai(pai);
-        }
-    return pilha;
+    }
+
+    int i, tam_pilha;
+    tam_pilha = tamanho_pilha(pilha);
+    code = (char*)malloc(sizeof(char)*tam_pilha);
+
+    for(i=0;i<tam_pilha;i++)
+        code[i] = (char*)pop(pilha);
+
+    destroi_pilha(pilha);
+
+    return code;
    }
 

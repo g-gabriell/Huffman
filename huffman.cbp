@@ -36,10 +36,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="include/arvore.h" />
-		<Unit filename="include/fila.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="include/fila.h" />
 		<Unit filename="include/heap.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "include/tabela.h"
 #include "include/heap.h"
@@ -26,13 +27,9 @@ int main()
 
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
+    printf(" Teste codigo: %s    \n ", cria_binario(character_get_folha(tabela[0])));
+
     destroi_arvore(arvore);
-
-//
-//    folhas = cria_folhas(tabela, tam_tabela);
-//    heap = inicializa_heap(tam_tabela, folhas);
-
-
 
 
     return 0;
