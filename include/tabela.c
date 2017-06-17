@@ -132,3 +132,12 @@ void binario_texto(char* binario, int tam_bin, char* text, int num_simbolos)
     }
     text -= num_simbolos;
 }
+
+sub_arvore_t* character_get_folha(caracter_t* character){
+    sub_arvore_t* folha = character->folha;
+    return folha;
+}
+
+void character_set_code(caracter_t* character, char* codigo){
+    character->codigo = codigo;
+}

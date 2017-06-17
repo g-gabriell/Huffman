@@ -52,6 +52,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="include/no.h" />
+		<Unit filename="include/pilha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="include/pilha.h" />
 		<Unit filename="include/tabela.c">
 			<Option compilerVar="CC" />
 		</Unit>

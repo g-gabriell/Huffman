@@ -58,7 +58,7 @@ void *dequeue(fila_t *fila)
         exit(EXIT_FAILURE);
     }
 
-    no = remover_cabeca(fila->dados);
+    no = remove_cabeca(fila->dados);
     dado = obter_dado(no);
     free(no);
 
@@ -73,7 +73,7 @@ void libera_fila(fila_t* fila)
         exit(EXIT_FAILURE);
     }
 
-    if (!lista_vazia(fila->dados)){
+    if (!vazia(fila->dados)){
     	fprintf(stderr, "Impossivel liberar fila, ainda ha dados\n");
 		exit(EXIT_FAILURE);
     }
@@ -89,5 +89,5 @@ int fila_vazia(fila_t *fila)
         exit(EXIT_FAILURE);
     }
 
-    return lista_vazia(fila->dados);
+    return vazia(fila->dados);
 }

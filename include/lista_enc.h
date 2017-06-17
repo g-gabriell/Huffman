@@ -7,18 +7,19 @@ typedef struct listas_enc lista_enc_t;
 
 lista_enc_t *cria_lista_enc(void);
 void add_cauda(lista_enc_t *lista, no_t* elemento);
-no_t *obter_cabeca(lista_enc_t *lista);
-int lista_vazia(lista_enc_t *lista);
 
-no_t *remover_cauda(lista_enc_t *lista);
-no_t *remover_cabeca(lista_enc_t *lista);
+//no_t * remove_elem(lista_enc_t *lista, int index);
 
-void imprimi_lista (lista_enc_t *lista);
-void imprimi_lista_tras (lista_enc_t *lista);
+void add_cabeca(lista_enc_t *lista, no_t* elemento);
 
-/* Retorna o dado de um no removido*
- * no_removido é liberado da memoória  */
-void *remover_no(lista_enc_t *lista, no_t *no_removido);
+void* remove_cabeca(lista_enc_t *lista);
+/*
+imprime lista
+*/
+
+int tamanho( lista_enc_t *lista);
+
+int vazia( lista_enc_t *lista);
 
 
 #endif // LISTA_ENC_H_INCLUDED
