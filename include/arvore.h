@@ -6,10 +6,8 @@ typedef struct sub_arvore sub_arvore_t;
 
 arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres, int tam_lista);
 sub_arvore_t** cria_folhas(caracter_t** lista, int tam);
-
 sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir);
 char* cria_binario(sub_arvore_t* folha);
-
 
 void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai);
 sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho);
@@ -21,5 +19,8 @@ void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B);
 
 void free_posordem(sub_arvore_t* vertice);
 void destroi_arvore(arvore_t* arvore);
+
+void imprime_preordem(sub_arvore_t* vertice, char buffer,int indice);
+void imprime_arvore(arvore_t* arvore,char* filename_entrada,char* filename_saida);
 
 #endif // ARVORE_H_INCLUDED
