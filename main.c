@@ -24,7 +24,7 @@ int main()
 
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
-
+    destroi_arvore(arvore);
 
 //
 //    folhas = cria_folhas(tabela, tam_tabela);
