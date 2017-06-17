@@ -108,7 +108,7 @@ void* remove_cabeca(lista_enc_t *lista){
         exit(EXIT_FAILURE);
     }
 
-    void* dado = obtem_dado(lista->cabeca);
+    void* dado = obter_dado(lista->cabeca);
     no_t* cabeca_antiga = lista->cabeca;
 
     #ifdef DEBUG

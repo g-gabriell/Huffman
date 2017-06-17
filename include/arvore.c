@@ -152,10 +152,10 @@ pilha_t* cria_binario(sub_arvore_t* folha){
     sub_arvore_t* pai = sub_arvore_get_pai(folha);
     while(pai != NULL){
 
-        if(pai->f_esq == folha)
-            push('0',pilha);
-        if(pai->f_dir == folha)
-            push('1',pilha);
+//        if(pai->f_esq == folha)
+//            push('0',pilha);
+//        if(pai->f_dir == folha)
+//            push('1',pilha);
 
         folha = pai;
         pai = sub_arvore_get_pai(pai);
