@@ -147,3 +147,15 @@ void binario_texto(char* binario, int tam_bin, char* text, int num_simbolos)
     }
     text -= num_simbolos;
 }
+
+void set_codes(caracter_t** lista_carcteres, int tam_lista)
+{
+    int i;
+    for(i=0;i<tam_lista;i++)
+        character_set_code(lista_carcteres[i], cria_binario(lista_carcteres[i]->folha));
+}
+
+char* get_code(caracter_t* caracter)
+{
+    return caracter->codigo;
+}

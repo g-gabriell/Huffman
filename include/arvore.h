@@ -20,4 +20,7 @@ void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B);
 void free_posordem(sub_arvore_t* vertice);
 void destroi_arvore(arvore_t* arvore);
 
+void imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice);
+void imprime_arvore(arvore_t* arvore,char* filename_entrada,char* filename_saida);
+
 #endif // ARVORE_H_INCLUDED
