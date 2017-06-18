@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "pilha.h"
 #include "heap.h"
@@ -56,6 +57,9 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     arvore->raiz = retira_menor(heap);
 
+//------ATRIBUI CODIGOS BINÁRIOS NA LISTA DE CARACTERES
+    set_codes(lista_carcteres, tam_lista);
+//
 
     destroi_heap(heap);
     free(folhas);
@@ -181,10 +185,11 @@ char* cria_binario(sub_arvore_t* folha){
 
     int i, tam_pilha;
     tam_pilha = tamanho_pilha(pilha);
-    code = malloc(sizeof(char)*tam_pilha +1);
+    code = malloc(sizeof(char)*tam_pilha);
 
     for(i=0;i<tam_pilha;i++)
         code[i] = (char)pop(pilha);
+
 
     destroi_pilha(pilha);
 
@@ -192,11 +197,11 @@ char* cria_binario(sub_arvore_t* folha){
    }
 
 int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
-
+    int i = indice;
     if (vertice == NULL)
         return;
 
-    int i = indice;
+
 
     buffer[i] = '{';
     i++;
@@ -204,10 +209,10 @@ int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
     i++;
     buffer[i] = ',';
     i++;
-    imprime_preordem(vertice->f_esq, buffer, i);
+    i = imprime_preordem(vertice->f_esq, buffer, i);
     buffer[i] = ',';
     i++;
-    imprime_preordem(vertice->f_esq, buffer, i);
+    i = imprime_preordem(vertice->f_dir, buffer, i);
     buffer[i] = '}';
     i++;
     return i;
