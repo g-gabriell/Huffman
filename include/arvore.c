@@ -57,12 +57,12 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     arvore->raiz = retira_menor(heap);
 
-//------ATRIBUI CODIGOS BINÃRIOS NA LISTA DE CARACTERES
+//------ATRIBUI CODIGOS BINÁRIOS NA LISTA DE CARACTERES
     set_codes(lista_carcteres, tam_lista);
 //
 
     destroi_heap(heap);
-    free(folhas);
+  //  free(folhas);
 
     return arvore;
 }
@@ -175,9 +175,9 @@ char* cria_binario(sub_arvore_t* folha){
     while(pai != NULL){
 
         if(pai->f_esq == filho)
-            push('0',pilha);
+            push('0', pilha);
         if(pai->f_dir == filho)
-            push('1',pilha);
+            push('1', pilha);
 
         filho = pai;
         pai = sub_arvore_get_pai(pai);
@@ -199,7 +199,7 @@ char* cria_binario(sub_arvore_t* folha){
 int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
     int i = indice;
     if (vertice == NULL)
-        return;
+        return i;
 
 
 
@@ -222,3 +222,4 @@ sub_arvore_t* arvore_get_raiz(arvore_t* arvore){
 
     return arvore->raiz;
 }
+
