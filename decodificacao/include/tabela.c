@@ -254,15 +254,15 @@ void le_arquivo_binario(char* filename){
 
     fread(buffer_arvore, sizeof(char), tam_arvore, binario);
 
-//    arvore_t* arvore = malloc(sizeof(arvore_t));
+    //Função recursiva que reconstroi a árvore
+    int i = 1;
+    arvore_t* arvore = cria_arvore_pre_ordem(buffer_arvore, &i, 0, NULL);
 
-    sub_arvore_t* raiz;// arvore_get_raiz;
 
-    cria_arvore_pre_ordem(buffer_arvore, 1, 0, NULL, &raiz);    //Função recursiva que reconstroi a árvore
 
 #ifdef DEBUG
     char buffer_temp[tam_arvore+1];
-    imprime_preordem(raiz, buffer_temp, 0);
+    imprime_preordem(arvore_get_raiz(arvore), buffer_temp, 0);
     buffer_temp[tam_arvore] = '\0';
     printf(" arvore:\n %s \n", buffer_temp);
 #endif // DEBUG
@@ -274,7 +274,7 @@ void le_arquivo_binario(char* filename){
     char letra;
     int index;
 
-    pai = raiz;
+    pai = arvore_get_raiz(arvore);
 
     while(fread(&byte, sizeof(char), 1, binario)){
         for(index = 0; (index < 8)  && (num_caracteres > 0); index++){
@@ -293,7 +293,7 @@ void le_arquivo_binario(char* filename){
                 num_caracteres--;
                 letra = sub_arvore_get_id(pai);
                 fwrite(&letra, 1, 1, output);
-                pai = raiz;
+                pai = arvore_get_raiz(arvore);
 #ifdef DEBUG
                 printf("%c", letra);
 #endif // DEBUG
@@ -301,15 +301,16 @@ void le_arquivo_binario(char* filename){
         }
     }
 
-    free_posordem(raiz);
+    destroi_arvore(arvore);
 
     fclose(binario);
     fclose(output);
 }
 
-int cria_arvore_pre_ordem(char* buffer_arvore,int i, int esq_dir, sub_arvore_t* pai, sub_arvore_t** raiz){
+arvore_t* cria_arvore_pre_ordem(char* buffer_arvore, int* i, int esq_dir, sub_arvore_t* pai){
 
-    sub_arvore_t* sub_arvore = cria_sub_arvore(0, buffer_arvore[i++], NULL, NULL);
+    sub_arvore_t* sub_arvore = cria_sub_arvore(0, buffer_arvore[(*i)++], NULL, NULL, pai);
+    arvore_t* arvore = NULL;
 
     if(pai != NULL){
 
@@ -317,15 +318,17 @@ int cria_arvore_pre_ordem(char* buffer_arvore,int i, int esq_dir, sub_arvore_t* 
             sub_arvore_set_f_esq(sub_arvore,pai);
         else
             sub_arvore_set_f_dir(sub_arvore,pai);
-    }else
-        *raiz = sub_arvore;
+    }
+    else{
+        arvore = cria_arvore(sub_arvore);
+    }
 
-    i++;
-    if(buffer_arvore[i++] == '{')
-        i = cria_arvore_pre_ordem(buffer_arvore, i, ESQUERDA, sub_arvore, NULL);
-    if(buffer_arvore[i++] == '{')
-        i = cria_arvore_pre_ordem(buffer_arvore, i, DIREITA,sub_arvore, NULL);
-    i++;
+    (*i)++;
+    if(buffer_arvore[(*i)++] == '{')
+        cria_arvore_pre_ordem(buffer_arvore, i, ESQUERDA, sub_arvore);
+    if(buffer_arvore[(*i)++] == '{')
+        cria_arvore_pre_ordem(buffer_arvore, i, DIREITA,sub_arvore);
+    (*i)++;
 
-    return i;
+    return arvore;
 }

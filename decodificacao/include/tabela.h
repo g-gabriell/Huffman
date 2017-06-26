@@ -26,6 +26,6 @@ void destroi_tabela(caracter_t** tabela, int tam_tabela);
 
 
 void le_arquivo_binario(char* filename);
-int cria_arvore_pre_ordem(char* buffer_arvore,int i, int esq_dir, sub_arvore_t* pai, sub_arvore_t** raiz);
+arvore_t* cria_arvore_pre_ordem(char* buffer_arvore,int* i, int esq_dir, sub_arvore_t* pai);
 
 #endif // TABELA_H_INCLUDED

@@ -47,7 +47,7 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
         filho_e = retira_menor(heap);
         filho_d = retira_menor(heap);
 
-        pai = cria_sub_arvore(sub_arvore_get_freq(filho_e) + sub_arvore_get_freq(filho_d), '+', filho_e, filho_d);
+        pai = cria_sub_arvore(sub_arvore_get_freq(filho_e) + sub_arvore_get_freq(filho_d), '+', filho_e, filho_d, NULL);
         sub_arvore_set_pai(filho_e, pai);
         sub_arvore_set_pai(filho_d, pai);
 
@@ -73,14 +73,14 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
     folhas = malloc(sizeof(sub_arvore_t*)*tam);
 
     for(i=0;i<tam;i++){
-        folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
+        folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL, NULL);
         set_folha(lista[i], folhas[i]);
     }
 
     return folhas;
 }
 
-sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir){
+sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir, sub_arvore_t* pai){
 
     sub_arvore_t* sub_arvore;
 
@@ -88,7 +88,7 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 
     sub_arvore->freq = frequencia;
     sub_arvore->id = nome;
-    sub_arvore->pai = NULL;
+    sub_arvore->pai = pai;
     sub_arvore->f_esq = f_esq;
     sub_arvore->f_dir = f_dir;
 
@@ -232,3 +232,9 @@ sub_arvore_t* arvore_get_raiz(arvore_t* arvore){
     return arvore->raiz;
 }
 
+arvore_t* cria_arvore(sub_arvore_t* raiz){
+
+    arvore_t* arvore = malloc(sizeof(arvore_t));
+    arvore->raiz = raiz;
+    return arvore;
+}

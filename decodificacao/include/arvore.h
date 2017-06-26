@@ -4,9 +4,10 @@
 typedef struct arvore arvore_t;
 typedef struct sub_arvore sub_arvore_t;
 
+arvore_t* cria_arvore(sub_arvore_t* raiz);
 arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres, int tam_lista);
 sub_arvore_t** cria_folhas(caracter_t** lista, int tam);
-sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir);
+sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, sub_arvore_t* f_dir, sub_arvore_t* pai);
 char* cria_binario(sub_arvore_t* folha);
 
 sub_arvore_t* arvore_get_raiz(arvore_t* arvore);
