@@ -10,6 +10,7 @@
 #define tst_bit(num, index) ((num >> (7 -index)) & 00000001)
 
 #define DEBUG
+
 #define ESQUERDA 0
 #define DIREITA 1
 
@@ -38,7 +39,6 @@ caracter_t** ContaFreq(const char* filename, int* num, int* num_caracteres){
         perror("malloc_tabela:");
         exit(EXIT_FAILURE);
     }
-
     file = fopen(filename, "r");
 
     if(file == NULL)

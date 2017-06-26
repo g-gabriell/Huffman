@@ -166,12 +166,22 @@ void free_posordem(sub_arvore_t* vertice){
 
 void destroi_arvore(arvore_t* arvore){
 
+    if (arvore == NULL){
+        perror("destroi_arvore:");
+        exit(EXIT_FAILURE);
+    }
+
     sub_arvore_t* raiz = arvore->raiz;
     free_posordem(raiz);
     free(arvore);
 }
 
 char* cria_binario(sub_arvore_t* folha){
+
+    if (folha == NULL){
+        perror("cria_binario:");
+        exit(EXIT_FAILURE);
+    }
 
     char* code;
 
@@ -228,7 +238,10 @@ int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
 }
 
 sub_arvore_t* arvore_get_raiz(arvore_t* arvore){
-
+    if (arvore == NULL){
+        perror("destroi_arvore:");
+        exit(EXIT_FAILURE);
+    }
     return arvore->raiz;
 }
 

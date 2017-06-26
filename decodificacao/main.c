@@ -12,7 +12,11 @@
 
 int main()
 {
-    le_arquivo_binario("arvore.txt");
+    printf("digite o nome do arquivo a ser descompactado\n");
+    char arquivo[200];
+    scanf("%s",arquivo);
+
+    le_arquivo_binario(arquivo);
 
     return 0;
 }
