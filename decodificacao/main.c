@@ -12,7 +12,7 @@
 
 int main()
 {
-    le_arquivo_binario("arquivo.txt");
+    le_arquivo_binario("arvore.txt");
 
     return 0;
 }
