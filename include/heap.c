@@ -87,6 +87,22 @@ void build_heap(heap_t* heap)
         min_heapify(heap,i);
 }
 
+void heapSort(heap_t * heap)
+{
+    int tamanho = heap->tam_heap-1;
+    int i;
+
+//    build_heap(heap);
+
+    for (i=tamanho; i > 0; i--)
+    {
+
+        swap_sub_arvore(&(heap->A[0]), &(heap->A[i]));
+
+        heap->tam_heap--;
+        min_heapify(heap, 0);
+    }
+}
 
 void set_tamanho_heap(heap_t* heap, int tamanho)
 {
@@ -113,12 +129,9 @@ sub_arvore_t* retira_menor(heap_t* heap)
     if(heap->tam_heap > 0){
 
         swap_sub_arvore(&(heap->A[0]),&(heap->A[heap->tam_heap]));
-      //  heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
     }
 
     build_heap(heap);
-    //min_heapify(heap, heap->tam_heap);
-
 
     return menor;
 
@@ -128,11 +141,9 @@ sub_arvore_t* retira_menor(heap_t* heap)
 void heap_insere(heap_t* heap, sub_arvore_t* sub_arvore)
 {
 
+    heap->A[heap->tam_heap] = sub_arvore;
+
     heap->tam_heap++;
- //   heap->A = realloc(heap->A, sizeof(sub_arvore_t*)*heap->tam_heap);
-
-    heap->A[heap->tam_heap -1] = sub_arvore;
-
     build_heap(heap);
 
 }
@@ -141,6 +152,6 @@ void heap_insere(heap_t* heap, sub_arvore_t* sub_arvore)
 void destroi_heap(heap_t* heap)
 {
 
-    free(heap->A);
+  //  free(heap->A);
     free(heap);
 }

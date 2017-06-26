@@ -1,12 +1,15 @@
-<<<<<<< HEAD
 # depslib dependency file v1.0
 1496257683 source:/home/gabriel/Documentos/Huffman/heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
 
+1497637234 
+
 1496256199 /home/gabriel/Documentos/Huffman/heap.h
 	"tabela.h"
+
+1498238588 
 
 1496256199 /home/gabriel/Documentos/Huffman/tabela.h
 
@@ -31,7 +34,7 @@
 
 1496180113 c:\users\jhonatan\documents\huffman\tabela.h
 
-1497722341 source:c:\users\jhonatan\documents\huffman\main.c
+1497811728 source:c:\users\jhonatan\documents\huffman\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -41,14 +44,17 @@
 	"include/pilha.h"
 	"include/lista_enc.h"
 
+1498238599 ista_enc.h"
+
 1496259497 source:c:\users\jhonatan\documents\huffman\tabela.c
 	<stdio.h>
 	<stdlib.h>
 	"tabela.h"
 
-1497722075 source:c:\users\jhonatan\documents\huffman\include\arvore.c
+1497811463 source:c:\users\jhonatan\documents\huffman\include\arvore.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"pilha.h"
 	"heap.h"
 	"arvore.h"
@@ -57,7 +63,7 @@
 	"tabela.h"
 	"arvore.h"
 
-1497716009 c:\users\jhonatan\documents\huffman\include\tabela.h
+1497811645 c:\users\jhonatan\documents\huffman\include\tabela.h
 	"arvore.h"
 
 1497719977 source:c:\users\jhonatan\documents\huffman\include\fila.c
@@ -80,7 +86,7 @@
 	"heap.h"
 	"arvore.h"
 
-1497716009 source:c:\users\jhonatan\documents\huffman\include\tabela.c
+1497811645 source:c:\users\jhonatan\documents\huffman\include\tabela.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -93,12 +99,14 @@
 	"lista_enc.h"
 	"no.h"
 
+1497797482 .h"
+
 1497716009 source:c:\users\jhonatan\documents\huffman\include\no.c
 	<stdio.h>
 	<stdlib.h>
 	"no.h"
 
-1497721730 c:\users\jhonatan\documents\huffman\include\arvore.h
+1497735662 c:\users\jhonatan\documents\huffman\include\arvore.h
 
 1497461889 source:/home/gabriel/Área de Trabalho/Huffman/include/fila.c
 	<stdlib.h>
@@ -151,6 +159,8 @@
 	"include/arvore.h"
 	"include/fila.h"
 
+1497637234 ila.h"
+
 1497637234 /home/gabriel/Área de Trabalho/Huffman/include/arvore.h
 	"fila.h"
 
@@ -170,40 +180,48 @@
 	"lista_enc.h"
 	"no.h"
 
-=======
-# depslib dependency file v1.0
-1496257683 source:/home/gabriel/Documentos/Huffman/heap.c
+1497797482 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
+	"arvore.h"
 
-1496256199 /home/gabriel/Documentos/Huffman/heap.h
+1497797482 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\heap.h
 	"tabela.h"
+	"arvore.h"
 
-1496256199 /home/gabriel/Documentos/Huffman/tabela.h
+1497826581 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\tabela.h
+	"arvore.h"
 
-1496256978 source:/home/gabriel/Documentos/Huffman/tabela.c
+1497826591 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\arvore.h
+
+1497797482 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\lista_enc.c
 	<stdio.h>
 	<stdlib.h>
-	"tabela.h"
+	"lista_enc.h"
+	"no.h"
 
-1496257613 source:/home/gabriel/Documentos/Huffman/main.c
+1497797482 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\lista_enc.h
+	"no.h"
+
+1497797482 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\no.h
+
+1497797482 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\no.c
 	<stdio.h>
 	<stdlib.h>
-	"tabela.h"
-	"heap.h"
+	"no.h"
 
-1496259497 source:c:\users\jhonatan\documents\huffman\heap.c
+1497797482 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\pilha.c
 	<stdio.h>
 	<stdlib.h>
-	"heap.h"
+	"pilha.h"
+	"lista_enc.h"
+	"no.h"
 
-1496259593 c:\users\jhonatan\documents\huffman\heap.h
-	"tabela.h"
+1497797482 c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\pilha.h
+	"lista_enc.h"
 
-1496180113 c:\users\jhonatan\documents\huffman\tabela.h
-
-1497728028 source:c:\users\jhonatan\documents\huffman\main.c
+1497826683 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -213,133 +231,150 @@
 	"include/pilha.h"
 	"include/lista_enc.h"
 
-1496259497 source:c:\users\jhonatan\documents\huffman\tabela.c
+1497826562 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\arvore.c
 	<stdio.h>
 	<stdlib.h>
-	"tabela.h"
-
-1497727628 source:c:\users\jhonatan\documents\huffman\include\arvore.c
-	<stdio.h>
-	<stdlib.h>
+	<string.h>
 	"pilha.h"
 	"heap.h"
 	"arvore.h"
 
-1497642849 c:\users\jhonatan\documents\huffman\include\heap.h
-	"tabela.h"
-	"arvore.h"
-
-1497727534 c:\users\jhonatan\documents\huffman\include\tabela.h
-	"arvore.h"
-
-1497719977 source:c:\users\jhonatan\documents\huffman\include\fila.c
-	<stdlib.h>
-	<stdio.h>
-	"lista_enc.h"
-	"no.h"
-	"fila.h"
-
-1490193026 c:\users\jhonatan\documents\huffman\include\lista_enc.h
-	"no.h"
-
-1497716009 c:\users\jhonatan\documents\huffman\include\no.h
-
-1497716009 c:\users\jhonatan\documents\huffman\include\fila.h
-
-1497721141 source:c:\users\jhonatan\documents\huffman\include\heap.c
-	<stdio.h>
-	<stdlib.h>
-	"heap.h"
-	"arvore.h"
-
-1497727534 source:c:\users\jhonatan\documents\huffman\include\tabela.c
+1497826562 source:c:\users\info\desktop\huffman-jhonatan (3)\huffman-jhonatan\include\tabela.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tabela.h"
 	"arvore.h"
 
-1497720514 source:c:\users\jhonatan\documents\huffman\include\lista_enc.c
+1498078949 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\arvore.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	"pilha.h"
+	"heap.h"
+	"arvore.h"
+
+1497797482 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\pilha.h
 	"lista_enc.h"
+
+1497797482 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\lista_enc.h
 	"no.h"
 
-1497716009 source:c:\users\jhonatan\documents\huffman\include\no.c
-	<stdio.h>
-	<stdlib.h>
-	"no.h"
+1497797482 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\no.h
 
-1497725706 c:\users\jhonatan\documents\huffman\include\arvore.h
+1497797482 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\heap.h
+	"tabela.h"
+	"arvore.h"
 
-1497461889 source:/home/gabriel/Área de Trabalho/Huffman/include/fila.c
-	<stdlib.h>
-	<stdio.h>
-	"lista_enc.h"
-	"no.h"
-	"fila.h"
+1498238579 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\tabela.h
+	"arvore.h"
 
-1497461889 /home/gabriel/Área de Trabalho/Huffman/include/lista_enc.h
-	"no.h"
+1498079169 c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\arvore.h
 
-1497461889 /home/gabriel/Área de Trabalho/Huffman/include/no.h
-
-1497461889 /home/gabriel/Área de Trabalho/Huffman/include/fila.h
-
-1497637234 source:/home/gabriel/Área de Trabalho/Huffman/include/heap.c
+1498078473 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\heap.c
 	<stdio.h>
 	<stdlib.h>
 	"heap.h"
 	"arvore.h"
 
-1497637234 /home/gabriel/Área de Trabalho/Huffman/include/heap.h
-	"tabela.h"
-	"arvore.h"
-
-1497461889 /home/gabriel/Área de Trabalho/Huffman/include/tabela.h
-
-1497461889 source:/home/gabriel/Área de Trabalho/Huffman/include/lista_enc.c
+1497797482 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\lista_enc.c
 	<stdio.h>
 	<stdlib.h>
 	"lista_enc.h"
 	"no.h"
 
-1497461889 source:/home/gabriel/Área de Trabalho/Huffman/include/no.c
+1497797482 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\no.c
 	<stdio.h>
 	<stdlib.h>
 	"no.h"
 
-1497469489 source:/home/gabriel/Área de Trabalho/Huffman/include/tabela.c
-	<stdio.h>
-	<stdlib.h>
-	"tabela.h"
-	"arvore.h"
-
-1497637234 source:/home/gabriel/Área de Trabalho/Huffman/main.c
-	<stdio.h>
-	<stdlib.h>
-	"include/tabela.h"
-	"include/heap.h"
-	"include/arvore.h"
-	"include/fila.h"
-
-1497637234 /home/gabriel/Área de Trabalho/Huffman/include/arvore.h
-	"fila.h"
-
-1497637234 source:/home/gabriel/Área de Trabalho/Huffman/include/arvore.c
-	<stdio.h>
-	<stdlib.h>
-	"heap.h"
-	"arvore.h"
-
-1497719799 c:\users\jhonatan\documents\huffman\include\pilha.h
-	"lista_enc.h"
-
-1497718895 source:c:\users\jhonatan\documents\huffman\include\pilha.c
+1497797482 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\pilha.c
 	<stdio.h>
 	<stdlib.h>
 	"pilha.h"
 	"lista_enc.h"
 	"no.h"
 
->>>>>>> origin/jhonatan
+1498238588 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\include\tabela.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tabela.h"
+	"arvore.h"
+
+1498238599 source:c:\users\jhonatan\desktop\huffman-jhonatan (1)\huffman-jhonatan\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/tabela.h"
+	"include/heap.h"
+	"include/arvore.h"
+	"include/pilha.h"
+	"include/lista_enc.h"
+
+1498239061 source:/home/gabriel/Área de Trabalho/Huffman/include/arvore.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pilha.h"
+	"heap.h"
+	"arvore.h"
+
+1497797482 /home/gabriel/Área de Trabalho/Huffman/include/pilha.h
+	"lista_enc.h"
+
+1497797482 /home/gabriel/Área de Trabalho/Huffman/include/lista_enc.h
+	"no.h"
+
+1497797482 /home/gabriel/Área de Trabalho/Huffman/include/no.h
+
+1497797482 /home/gabriel/Área de Trabalho/Huffman/include/heap.h
+	"tabela.h"
+	"arvore.h"
+
+1498238579 /home/gabriel/Área de Trabalho/Huffman/include/tabela.h
+	"arvore.h"
+
+1498079169 /home/gabriel/Área de Trabalho/Huffman/include/arvore.h
+
+1498078473 source:/home/gabriel/Área de Trabalho/Huffman/include/heap.c
+	<stdio.h>
+	<stdlib.h>
+	"heap.h"
+	"arvore.h"
+
+1497797482 source:/home/gabriel/Área de Trabalho/Huffman/include/lista_enc.c
+	<stdio.h>
+	<stdlib.h>
+	"lista_enc.h"
+	"no.h"
+
+1497797482 source:/home/gabriel/Área de Trabalho/Huffman/include/no.c
+	<stdio.h>
+	<stdlib.h>
+	"no.h"
+
+1497797482 source:/home/gabriel/Área de Trabalho/Huffman/include/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+	"lista_enc.h"
+	"no.h"
+
+1498238588 source:/home/gabriel/Área de Trabalho/Huffman/include/tabela.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tabela.h"
+	"arvore.h"
+
+1498238599 source:/home/gabriel/Área de Trabalho/Huffman/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/tabela.h"
+	"include/heap.h"
+	"include/arvore.h"
+	"include/pilha.h"
+	"include/lista_enc.h"
+

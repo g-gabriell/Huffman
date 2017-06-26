@@ -5,7 +5,7 @@ typedef struct caracter caracter_t;
 
 #include "arvore.h"
 
-caracter_t** ContaFreq(const char* filename, int* num);
+caracter_t** ContaFreq(const char* filename, int* num, int* num_caracteres);
 
 char get_simbolo(caracter_t* p);
 int get_freq(caracter_t* p);
@@ -18,6 +18,8 @@ void set_folha(caracter_t* p, sub_arvore_t* folha);
 void set_codes(caracter_t** lista_carcteres, int tam_lista);
 void character_set_code(caracter_t* character, char* codigo);
 
-void imprime_binario(caracter_t** tabela, arvore_t* arvore,char* filename_input,char* filename_output);
+void imprime_binario(caracter_t** tabela, arvore_t* arvore, char* filename_input, char* filename_output, int num_caracteres);
+
+void destroi_tabela(caracter_t** tabela, int tam_tabela);
 
 #endif // TABELA_H_INCLUDED

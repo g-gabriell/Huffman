@@ -21,7 +21,6 @@ struct sub_arvore{
     sub_arvore_t* f_dir;
 };
 
-
 arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     arvore_t* arvore;
@@ -59,10 +58,9 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
 //------ATRIBUI CODIGOS BINÁRIOS NA LISTA DE CARACTERES
     set_codes(lista_carcteres, tam_lista);
-//
 
     destroi_heap(heap);
-  //  free(folhas);
+    free(folhas);
 
     return arvore;
 }
@@ -77,8 +75,8 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
     for(i=0;i<tam;i++){
         folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
         set_folha(lista[i], folhas[i]);
-
     }
+
     return folhas;
 }
 
@@ -98,6 +96,7 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
 }
 
 sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho){
+
     if(filho == NULL){
         printf("sub_arvore_get_pai: filho invalido");
         exit(2);
@@ -112,8 +111,8 @@ sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho){
 }
 
 
-void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
-{
+void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai){
+
     filho->pai = pai;
 }
 
@@ -134,7 +133,7 @@ char sub_arvore__get_id(sub_arvore_t* sub_arvore){
 void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B){
 
 #ifdef DEBUG
-printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
+    printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 #endif
 
     sub_arvore_t* temp;
@@ -142,35 +141,34 @@ printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
     *A = *B;
     *B = temp;
 
-#ifdef DEBUG
-printf(" %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
-#endif
 }
 
 void free_posordem(sub_arvore_t* vertice){
+
     if(vertice == NULL)
         return;
+
     free_posordem(vertice->f_esq);
     free_posordem(vertice->f_dir);
     free(vertice);
 }
 
 void destroi_arvore(arvore_t* arvore){
+
     sub_arvore_t* raiz = arvore->raiz;
     free_posordem(raiz);
+    free(arvore);
 }
-
-
 
 char* cria_binario(sub_arvore_t* folha){
 
     char* code;
 
     pilha_t* pilha = cria_pilha();
-    push('\0',pilha);       //fim da string
-
     sub_arvore_t* filho = folha;
     sub_arvore_t* pai = sub_arvore_get_pai(filho);
+
+    push('\0',pilha);       //fim da string
 
     while(pai != NULL){
 
@@ -184,12 +182,12 @@ char* cria_binario(sub_arvore_t* folha){
     }
 
     int i, tam_pilha;
+
     tam_pilha = tamanho_pilha(pilha);
     code = malloc(sizeof(char)*tam_pilha);
 
     for(i=0;i<tam_pilha;i++)
         code[i] = (char)pop(pilha);
-
 
     destroi_pilha(pilha);
 
@@ -197,11 +195,10 @@ char* cria_binario(sub_arvore_t* folha){
    }
 
 int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
+
     int i = indice;
     if (vertice == NULL)
         return i;
-
-
 
     buffer[i] = '{';
     i++;
@@ -215,6 +212,7 @@ int imprime_preordem(sub_arvore_t* vertice, char* buffer,int indice){
     i = imprime_preordem(vertice->f_dir, buffer, i);
     buffer[i] = '}';
     i++;
+
     return i;
 }
 
