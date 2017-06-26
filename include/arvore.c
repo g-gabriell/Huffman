@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "pilha.h"
 #include "heap.h"
 #include "arvore.h"
 
@@ -12,7 +13,7 @@ struct arvore{
 
 struct sub_arvore{
     char   id;
-    int     freq;
+    int    freq;
 
     sub_arvore_t* pai;
     sub_arvore_t* f_esq;
@@ -53,10 +54,8 @@ arvore_t* cria_arvore_huffman(caracter_t** lista_carcteres,int tam_lista){
 
     arvore->raiz = retira_menor(heap);
 
-
     destroi_heap(heap);
     free(folhas);
-
 /*
 
     int n = tam_lista;
@@ -85,7 +84,6 @@ sub_arvore_t** cria_folhas(caracter_t** lista, int tam){
 
     for(i=0;i<tam;i++){
         folhas[i] = cria_sub_arvore(get_freq(lista[i]), get_simbolo(lista[i]), NULL, NULL);
-        set_folha(lista[i], folhas[i]);
 
     }
     return folhas;
@@ -106,6 +104,9 @@ sub_arvore_t* cria_sub_arvore(int frequencia, char nome, sub_arvore_t* f_esq, su
     return sub_arvore;
 }
 
+sub_arvore_t* sub_arvore_get_pai(sub_arvore_t* filho){
+        return filho->pai;
+    }
 
 
 void sub_arvore_set_pai(sub_arvore_t* filho, sub_arvore_t* pai)
@@ -142,3 +143,34 @@ printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 printf(" %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 #endif
 }
+
+void free_posordem(sub_arvore_t* vertice){
+    if(vertice == NULL)
+        return;
+    free_posordem(vertice->f_esq);
+    free_posordem(vertice->f_dir);
+    free(vertice);
+}
+
+void destroi_arvore(arvore_t* arvore){
+    sub_arvore_t* raiz = arvore->raiz;
+    free_posordem(raiz);
+}
+
+
+
+pilha_t* cria_binario(sub_arvore_t* folha){
+    pilha_t* pilha = cria_pilha();
+    sub_arvore_t* pai = sub_arvore_get_pai(folha);
+    while(pai != NULL){
+
+        if(pai->f_esq == folha)
+            push('0',pilha);
+        if(pai->f_dir == folha)
+            push('1',pilha);
+
+        folha = pai;
+        pai = sub_arvore_get_pai(pai);
+        }
+    return pilha;
+    }

@@ -4,10 +4,7 @@
 #include "include/tabela.h"
 #include "include/heap.h"
 #include "include/arvore.h"
-<<<<<<< HEAD
 
-=======
->>>>>>> 7320334232dd62233346c12767410eb9aedff633
 
 int main()
 {
