@@ -8,7 +8,7 @@
 #define bitset(num,index) ((num) |= (1 << (7-index)))
 #define bitclr(num,index) ((num) &= ~(1 << (7-index)))
 
-#define DEBUG
+//ĵ#define DEBUG
 
 struct caracter{
 

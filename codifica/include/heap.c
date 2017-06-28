@@ -19,8 +19,9 @@ heap_t* inicializa_heap(int tamanho_heap, sub_arvore_t** folhas)
 
     heap->A = folhas;
     heap->tam_heap = tamanho_heap;
-
+    #ifdef DEBUG
     printf("INICIALIZA HEAP\n");
+    #endif
     build_heap(heap);
 
     #ifdef DEBUG
