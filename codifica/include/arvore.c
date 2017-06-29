@@ -133,7 +133,7 @@ char sub_arvore__get_id(sub_arvore_t* sub_arvore){
 void swap_sub_arvore(sub_arvore_t** A, sub_arvore_t** B){
 
 #ifdef DEBUG
-    printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
+   //8 printf("\nswap %d  e  %d\n", sub_arvore_get_freq(*A), sub_arvore_get_freq(*B));
 #endif
 
     sub_arvore_t* temp;

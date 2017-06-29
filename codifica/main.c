@@ -13,9 +13,20 @@
 
 int main()
 {
-    printf("Digite o nome do arquivo a ser compactado:\n");
+
     char arquivo[200];
+    char arquivo_saida[200];
+
+    printf("Digite o nome do arquivo a ser compactado:\n");
     scanf("%s",arquivo);
+
+    memcpy(arquivo_saida, arquivo, strlen(arquivo));
+    int aux_cat = strlen(arquivo);
+    arquivo_saida[aux_cat++] = '.';
+    arquivo_saida[aux_cat++] = 'h';
+    arquivo_saida[aux_cat++] = 'f';
+    arquivo_saida[aux_cat++] = 'f';
+    arquivo_saida[aux_cat++] = '\0';
 
     clock_t start, end;
     double cpu_time_used;
@@ -37,7 +48,7 @@ int main()
 #endif
 
     start = clock();
-    imprime_binario(tabela, arvore, arquivo, "arvore.txt", num_caracteres);
+    imprime_binario(tabela, arvore, arquivo, arquivo_saida, num_caracteres);
 
     destroi_arvore(arvore);
     destroi_tabela(tabela, tam_tabela);
