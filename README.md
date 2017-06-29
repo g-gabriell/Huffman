@@ -1,10 +1,10 @@
-#•Sobre Compactador Huffman:
+# •Sobre Compactador Huffman:
 
 
 O algoritmo de Huffman é um método de compressão de arquivos de texto, este programa utiliza as frequências de ocorrência de cada símbolo do conjunto de dados para criar uma árvore onde as folhas representam os caracteres dos conjuntos de dados, sendo que os caracteres mais frequentes ficam próximos de sua raiz.
 
 
-##•Instruções de uso:
+## •Instruções de uso:
 
 	compactador
 	
@@ -14,7 +14,7 @@ O algoritmo de Huffman é um método de compressão de arquivos de texto, este p
 	
 	Digite o caminho absoluto do arquivo ".hff" a ser descompactado
 
-##•Testes de desempenho:
+## •Testes de desempenho:
 
 	• Memória alocada
 	
