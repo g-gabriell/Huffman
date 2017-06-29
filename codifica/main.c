@@ -13,6 +13,10 @@
 
 int main()
 {
+    printf("Digite o nome do arquivo a ser compactado:\n");
+    char arquivo[200];
+    scanf("%s",arquivo);
+
     clock_t start, end;
     double cpu_time_used;
 
@@ -21,7 +25,7 @@ int main()
     int tam_tabela;
     int num_caracteres;
 
-    tabela = ContaFreq("arquivo.txt", &tam_tabela, &num_caracteres);
+    tabela = ContaFreq(arquivo, &tam_tabela, &num_caracteres);
     arvore = cria_arvore_huffman(tabela, tam_tabela);
 
 #ifdef DEBUG
@@ -33,14 +37,15 @@ int main()
 #endif
 
     start = clock();
-    imprime_binario(tabela, arvore, "arquivo.txt", "arvore.txt", num_caracteres);
+    imprime_binario(tabela, arvore, arquivo, "arvore.txt", num_caracteres);
 
     destroi_arvore(arvore);
     destroi_tabela(tabela, tam_tabela);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
+#ifdef DEBUG
     printf("\n%lf", cpu_time_used);
-
+#endif // DEBUG
     return 0;
 }

@@ -10,7 +10,7 @@
 #define clr_bit(num,index)  num &= ~(1 << (7-index))
 #define tst_bit(num, index) ((num >> (7 -index)) & 00000001)
 
-#define DEBUG
+//#define DEBUG
 
 #define ESQUERDA 0
 #define DIREITA 1

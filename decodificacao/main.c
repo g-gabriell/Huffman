@@ -25,8 +25,8 @@ int main()
     le_arquivo_binario(arquivo);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-
+#ifdef DEBUG
     printf("\n%lf", cpu_time_used);
-
+#endif // DEBUG
     return 0;
 }
